@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif DKV Kelas X</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="p-2 bg-indigo-600 text-white rounded-lg"><i class="fa-solid fa-palette text-xl"></i></span>
+                    <span class="font-bold text-xl tracking-tight text-indigo-900">DKV <span class="text-indigo-600">X-SMK</span></span>
+                </div>
+                <div class="hidden md:flex space-x-6 font-medium text-slate-600">
+                    <a href="#pengertian" class="hover:text-indigo-600 transition-colors">Definisi</a>
+                    <a href="#tujuan" class="hover:text-indigo-600 transition-colors">Tujuan</a>
+                    <a href="#unsur" class="hover:text-indigo-600 transition-colors">Unsur Visual</a>
+                    <a href="#produk" class="hover:text-indigo-600 transition-colors">Media & Era Digital</a>
+                    <a href="#interaktif" class="hover:text-indigo-600 transition-colors bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full text-sm">Kuis Kilat</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative bg-gradient-to-tr from-indigo-950 via-indigo-900 to-purple-900 text-white py-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 text-xs uppercase px-3 py-1.5 rounded-full font-semibold tracking-wider">Materi Pembelajaran</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-4 tracking-tight leading-tight">Dasar-Dasar Desain Komunikasi Visual</h1>
+            <p class="text-indigo-200 text-lg max-w-2xl mx-auto">Mari pelajari bagaimana sebuah pesan visual dapat mengubah cara pandang, mengedukasi, dan menggerakkan dunia di era digital.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-20">
+
+        <section id="pengertian" class="scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Apa itu DKV?</h2>
+                <div class="h-1 w-16 bg-indigo-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+                <div class="space-y-4">
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        <strong class="text-indigo-600">Desain Komunikasi Visual (DKV)</strong> adalah ilmu yang memadukan gambar, warna, tipografi, dan tata letak menjadi karya visual bermakna. 
+                    </p>
+                    <blockquote class="border-l-4 border-indigo-600 bg-indigo-50 p-4 rounded-r-xl italic text-indigo-900 font-medium">
+                        "DKV bukan sekadar membuat gambar yang indah, melainkan merancang visual yang mampu menyampaikan pesan secara efektif."
+                    </blockquote>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass text-indigo-600"></i> Studi Kasus: Analisis Botol Minuman
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-4">Klik elemen di bawah untuk melihat fungsi DKV pada produk sehari-hari:</p>
+                    <div class="space-y-2">
+                        <button onclick="alert('Logo: Sebagai identitas agar pembeli langsung mengenali merk botol ini.')" class="w-full text-left bg-white hover:bg-indigo-50 p-3 rounded-lg border border-slate-200 transition-all font-medium text-sm flex justify-between items-center">
+                            <span>1. Logo di Botol</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </button>
+                        <button onclick="alert('Warna & Bentuk: Membuat kemasan tampak menyegarkan dan menarik perhatian di rak toko.')" class="w-full text-left bg-white hover:bg-indigo-50 p-3 rounded-lg border border-slate-200 transition-all font-medium text-sm flex justify-between items-center">
+                            <span>2. Warna & Bentuk Kemasan</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </button>
+                        <button onclick="alert('Tipografi (Teks): Memberikan informasi komposisi, tanggal kedaluwarsa, dan jargon promosi.')" class="w-full text-left bg-white hover:bg-indigo-50 p-3 rounded-lg border border-slate-200 transition-all font-medium text-sm flex justify-between items-center">
+                            <span>3. Tulisan Informasi</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tujuan" class="scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Tujuan Utama DKV</h2>
+                <p class="text-slate-500 mt-2">Mengapa komunikasi visual sangat krusial?</p>
+                <div class="h-1 w-16 bg-indigo-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-circle-info"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Menyampaikan Informasi</h3>
+                    <p class="text-slate-600 text-sm">Visual memproses data lebih cepat. Contoh: Infografis, rambu lalu lintas, peta.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-id-card"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Membangun Identitas</h3>
+                    <p class="text-slate-600 text-sm">Menciptakan ciri khas organisasi/produk. Contoh: Logo, maskot, warna seragam.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Media Promosi</h3>
+                    <p class="text-slate-600 text-sm">Meningkatkan minat masyarakat terhadap produk. Contoh: Banner, Iklan YouTube, Instagram feed.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Memberikan Edukasi</h3>
+                    <p class="text-slate-600 text-sm">Membantu pemahaman materi belajar. Contoh: Buku pelajaran bergambar, video animasi edukasi.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-100 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <h3 class="font-bold text-lg mb-2">Mempengaruhi Audiens</h3>
+                    <p class="text-slate-600 text-sm">Mengajak orang melakukan tindakan. Contoh: Poster ajakan memakai helm atau menjaga lingkungan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="unsur" class="scroll-mt-20">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Unsur-Unsur Visual DKV</h2>
+                <div class="h-1 w-16 bg-indigo-600 mx-auto mt-2 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-1 space-y-3 bg-white p-4 rounded-xl border border-slate-100">
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-indigo-600"></span> 1. Titik (Elemen Paling Dasar)</div>
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><span class="w-4 h-0.5 bg-indigo-600"></span> 2. Garis (Arah & Kesan Gerak)</div>
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><span class="w-3 h-3 bg-indigo-600 rounded-xs"></span> 3. Bentuk / Shape (Geometris/Organis)</div>
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><span class="font-serif italic text-indigo-600">Abc</span> 4. Tipografi (Seni Mengatur Huruf)</div>
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><i class="fa-regular fa-image text-indigo-600"></i> 5. Ilustrasi / Gambar (Foto/Vektor)</div>
+                    <div class="p-3 bg-slate-50 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-3"><i class="fa-solid fa-table-cells-large text-indigo-600"></i> 6. Layout (Tata Letak Elemen)</div>
+                </div>
+
+                <div class="md:col-span-2 bg-white p-6 rounded-xl border border-slate-100 shadow-xs">
+                    <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-slate-800">
+                        <i class="fa-solid fa-droplet text-indigo-600"></i> Psikologi Warna dalam DKV
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Warna membawa pesan emosional. Klik warna di bawah untuk melihat maknanya:</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Merah:</strong> Melambangkan Semangat, Berani, dan Energi.'" class="bg-red-500 text-white p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Merah</button>
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Biru:</strong> Melambangkan Ketenangan, Kepercayaan, dan Profesionalitas.'" class="bg-blue-600 text-white p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Biru</button>
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Hijau:</strong> Melambangkan Alam, Kesehatan, Pertumbuhan, dan Kesegaran.'" class="bg-emerald-600 text-white p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Hijau</button>
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Kuning:</strong> Melambangkan Keceriaan, Optimisme, dan Kehangatan.'" class="bg-amber-400 text-slate-900 p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Kuning</button>
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Hitam:</strong> Melambangkan Keanggunan (Elegan), Kekuatan, dan Misteri.'" class="bg-slate-900 text-white p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Hitam</button>
+                        <button onclick="document.getElementById('arti-warna').innerHTML = '<strong>Putih:</strong> Melambangkan Kebersihan, Kesucian, Kesederhanaan, dan Kemurnian.'" class="bg-white text-slate-800 border border-slate-300 p-4 rounded-lg font-bold text-sm shadow-xs active:scale-95 transition-transform">Putih</button>
+                    </div>
+                    
+                    <div class="mt-4 p-4 bg-slate-50 border-l-4 border-slate-400 rounded-r-lg min-h-[60px] text-sm flex items-center justify-center text-slate-700" id="arti-warna">
+                        <em>Klik salah satu tombol warna di atas untuk membaca maknanya.</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produk" class="scroll-mt-20 grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2 bg-white p-6 rounded-2xl border border-slate-100 shadow-xs">
+                <h3 class="font-bold text-xl mb-4 text-slate-900"><i class="fa-solid fa-photo-film text-indigo-600 mr-2"></i>Media Visual & Tujuannya</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-600 border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-700 uppercase tracking-wider text-xs border-b border-slate-200">
+                                <th class="p-3 font-semibold">Media Visual</th>
+                                <th class="p-3 font-semibold">Tujuan / Fungsi Utama</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr><td class="p-3 font-medium text-indigo-900">Logo</td><td class="p-3">Identitas perusahaan, sekolah, atau produk.</td></tr>
+                            <tr class="bg-slate-50/50"><td class="p-3 font-medium text-indigo-900">Poster</td><td class="p-3">Menyampaikan informasi atau ajakan publik.</td></tr>
+                            <tr><td class="p-3 font-medium text-indigo-900">Banner / Spanduk</td><td class="p-3">Promosi kegiatan, acara, atau produk komersial.</td></tr>
+                            <tr class="bg-slate-50/50"><td class="p-3 font-medium text-indigo-900">Kemasan Produk</td><td class="p-3">Menarik perhatian pembeli & melindungi fisik produk.</td></tr>
+                            <tr><td class="p-3 font-medium text-indigo-900">Infografis</td><td class="p-3">Menjelaskan data rumit secara visual ringkas.</td></tr>
+                            <tr class="bg-slate-50/50"><td class="p-3 font-medium text-indigo-900">Feed Instagram</td><td class="p-3">Branding, portofolio, dan promosi digital modern.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-700 text-white p-6 rounded-2xl shadow-md flex flex-col justify-between">
+                <div>
+                    <h3 class="font-bold text-xl mb-2 flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> DKV di Era Digital</h3>
+                    <p class="text-indigo-100 text-sm leading-relaxed mb-4">Hampir seluruh informasi di platform digital (TikTok, Instagram, Web, Marketplace) membutuhkan sentuhan desain visual agar dilirik audiens.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-xs text-indigo-200 uppercase tracking-widest mb-2">Peluang Karir Lulusan:</h4>
+                    <div class="flex flex-wrap gap-1.5 text-xs">
+                        <span class="bg-white/10 px-2 py-1 rounded">Graphic Designer</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">UI Designer</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">Illustrator</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">Content Creator</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">Motion Animator</span>
+                        <span class="bg-white/10 px-2 py-1 rounded">Brand Strategist</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interaktif" class="scroll-mt-20 bg-indigo-50 border-2 border-indigo-100 p-6 md:p-8 rounded-2xl">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-6">
+                    <span class="text-xs bg-indigo-200 text-indigo-800 font-bold px-2.5 py-1 rounded-full uppercase">Evaluasi Mandiri</span>
+                    <h3 class="font-bold text-2xl text-slate-900 mt-2">Kuis Kilat Pemahaman DKV</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-xs border border-slate-200">
+                    <p class="font-semibold text-slate-800 text-base mb-4" id="teks-soal">1. Apa esensi utama dari ilmu Desain Komunikasi Visual (DKV)?</p>
+                    <div class="space-y-2.5" id="box-opsi">
+                        </div>
+                    <div id="hasil-kuis" class="mt-4 hidden p-3 rounded-lg text-sm font-medium text-center"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs py-12 mt-20 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+            <div>
+                <p class="font-bold text-sm text-white mb-2">Bahan Penguatan Materi - Dasar DKV Kelas X</p>
+                <p>Dikembangkan secara responsif untuk menunjang pembelajaran aktif interaktif di laboratorium komputer maupun gawai siswa.</p>
+            </div>
+            <div class="space-y-1 md:text-right">
+                <p class="font-semibold text-slate-200">Sumber Referensi:</p>
+                <p>Kemendikbudristek - Capaian Pembelajaran DKV SMK (Kurikulum Merdeka 2024)</p>
+                <p>Interaction Design Foundation - <em>Visual Communication & Principles</em></p>
+                <p>AIGA (<em>American Institute of Graphic Arts</em>)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const dataKuis = [
+            {
+                soal: "1. Apa esensi utama dari ilmu Desain Komunikasi Visual (DKV)?",
+                opsi: [
+                    { teks: "A. Membuat lukisan abstrak bernilai seni tinggi", benar: false },
+                    { teks: "B. Menyampaikan pesan/informasi melalui media visual agar efektif", benar: true },
+                    { teks: "C. Menghafal seluruh kode warna digital", benar: false }
+                ]
+            },
+            {
+                soal: "2. Ketika melihat sebuah produk, bagian DKV manakah yang berperan utama sebagai identitas pengenal produk tersebut?",
+                opsi: [
+                    { teks: "A. Logo", benar: true },
+                    { teks: "B. Brosur penawaran", benar: false },
+                    { teks: "C. Ukuran kardus luar", border: false }
+                ]
+            },
+            {
+                soal: "3. Secara psikologi warna, warna manakah yang sering digunakan untuk memunculkan kesan profesional, tenang, dan tepercaya?",
+                opsi: [
+                    { teks: "A. Merah", benar: false },
+                    { teks: "B. Kuning", benar: false },
+                    { teks: "C. Biru", benar: true }
+                ]
+            }
+        ];
+
+        let indexSoalSekarang = 0;
+
+        function loadSoal() {
+            const dataSekarang = dataKuis[indexSoalSekarang];
+            document.getElementById('teks-soal').innerText = dataSekarang.soal;
+            const boxOpsi = document.getElementById('box-opsi');
+            boxOpsi.innerHTML = '';
+            
+            const divHasil = document.getElementById('hasil-kuis');
+            divHasil.classList.add('hidden');
+
+            dataSekarang.opsi.forEach(opsi => {
+                const button = document.createElement('button');
+                button.innerText = opsi.teks;
+                button.className = "w-full text-left p-3 rounded-lg border border-slate-200 hover:bg-slate-50 font-medium text-sm transition-colors text-slate-700 flex justify-between items-center";
+                button.onclick = () => cekJawaban(opsi.benar);
+                boxOpsi.appendChild(button);
+            });
+        }
+
+        function cekJawaban(apakahBenar) {
+            const divHasil = document.getElementById('hasil-kuis');
+            divHasil.classList.remove('hidden');
+            
+            if(apakahBenar) {
+                divHasil.className = "mt-4 p-3 rounded-lg text-sm font-medium text-center bg-emerald-100 text-emerald-800";
+                divHasil.innerHTML = "🎉 Jawabanmu Benar! Hebat. " + (indexSoalSekarang < dataKuis.length - 1 ? "<button onclick='nextSoal()' class='ml-2 font-bold underline text-emerald-900 hover:text-emerald-700'>Lanjut Soal Berikutnya &rarr;</button>" : "<br><span class='font-bold block mt-1 text-emerald-900'>Kamu telah menyelesaikan kuis penguatan materi hari ini!</span>");
+            } else {
+                divHasil.className = "mt-4 p-3 rounded-lg text-sm font-medium text-center bg-rose-100 text-rose-800";
+                divHasil.innerText = "❌ Jawaban kurang tepat. Coba baca kembali ulasan materi di atas dan pilih jawaban lain!";
+            }
+        }
+
+        function nextSoal() {
+            indexSoalSekarang++;
+            if(indexSoalSekarang < dataKuis.length) {
+                loadSoal();
+            }
+        }
+
+        // Jalankan kuis pertama kali saat halaman dimuat
+        window.onload = loadSoal;
+    </script>
+</body>
+</html>
