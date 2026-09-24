@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K3LH dalam Desain Komunikasi Visual (DKV)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        dkv: {
+                            50: '#f0f9ff',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-emerald-500/20">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg leading-tight text-slate-900 dark:text-white">K3LH DKV</h1>
+                        <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Keselamatan, Kesehatan, Kerja & Lingkungan Hidup</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-1 text-xs font-semibold text-slate-600 dark:text-slate-300">
+                    <a href="#pengertian" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Pengertian</a>
+                    <a href="#ergonomi" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Ergonomi</a>
+                    <a href="#risiko-bidang" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Risiko Bidang</a>
+                    <a href="#apd-kebakaran" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">APD & Kebakaran</a>
+                    <a href="#lingkungan-5r" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">Lingkungan & 5R</a>
+                    <a href="#simulasi" class="px-3 py-2 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 transition">
+                        <i class="fa-solid fa-magnifying-glass mr-1"></i> Detektif K3LH
+                    </a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition" title="Toggle Theme">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block"></i>
+                    </button>
+                    <a href="#kuis" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-medium shadow-sm transition">
+                        <i class="fa-solid fa-pen-to-square"></i> Uji Pemahaman
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white py-12 md:py-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#34d399_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <i class="fa-solid fa-book-open"></i> Modul Pembelajaran Dasar-Dasar DKV Fase E
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Panduan Lengkap <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">K3LH</span> dalam Dunia DKV
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Menciptakan lingkungan kerja DKV yang aman, sehat, tertib, dan berwawasan lingkungan. Dari posisi duduk desainer hingga pengelolaan studio foto dan limbah percetakan.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                        <a href="#simulasi" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold rounded-xl text-sm transition shadow-lg shadow-emerald-500/25 flex items-center gap-2">
+                            <i class="fa-solid fa-gamepad"></i> Coba Simulasi Detektif
+                        </a>
+                        <a href="#ergonomi-calc" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-xl text-sm border border-slate-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-calculator"></i> Kalkulator Ergonomi
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5 Key Pillars Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl shadow-xl backdrop-blur">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center justify-between">
+                            <span>5 Kata Kunci Utama K3LH</span>
+                            <i class="fa-solid fa-key text-emerald-400"></i>
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/60">
+                                <div class="text-emerald-400 font-bold text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-shield"></i> 1. AMAN
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Mencegah kecelakaan kerja & insiden.</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/60">
+                                <div class="text-cyan-400 font-bold text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-heart-pulse"></i> 2. SEHAT
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Menjaga kondisi fisik & mental.</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/60">
+                                <div class="text-amber-400 font-bold text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-chair"></i> 3. ERGONOMIS
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Kesesuaian manusia & alat kerja.</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/60">
+                                <div class="text-green-400 font-bold text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-leaf"></i> 4. LINGKUNGAN
+                                </div>
+                                <p class="text-xs text-slate-400 mt-1">Kurangi dampak sampah & energi.</p>
+                            </div>
+                            <div class="sm:col-span-2 p-3 bg-slate-900/60 rounded-xl border border-slate-700/60 flex items-center justify-between">
+                                <div>
+                                    <div class="text-indigo-400 font-bold text-sm flex items-center gap-2">
+                                        <i class="fa-solid fa-arrows-rotate"></i> 5. BUDAYA 5R
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-0.5">Ringkas, Rapi, Resik, Rawat, Rajin.</p>
+                                </div>
+                                <span class="text-xs bg-indigo-500/20 text-indigo-300 font-mono px-2 py-1 rounded">5S Standard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION A, B, C: PENGERTIAN & DASAR HUKUM -->
+        <section id="pengertian" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                    <i class="fa-solid fa-shield-halved text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">A, B, C. Pengertian & Dasar Hukum K3LH</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Konsep dasar keselamatan dan kesehatan kerja di industri kreatif DKV</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Singkatan Breakout -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-emerald-500"></i> Kepanjangan K3LH
+                    </h3>
+                    <ul class="space-y-3 font-semibold">
+                        <li class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">K</span>
+                            <span class="text-slate-800 dark:text-slate-200">Keselamatan</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">K</span>
+                            <span class="text-slate-800 dark:text-slate-200">Kesehatan</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">K</span>
+                            <span class="text-slate-800 dark:text-slate-200">Kerja</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold">L</span>
+                            <span class="text-slate-800 dark:text-slate-200">Lingkungan</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-900/50 rounded-lg">
+                            <span class="w-8 h-8 rounded-lg bg-teal-600 text-white flex items-center justify-center font-bold">H</span>
+                            <span class="text-slate-800 dark:text-slate-200">Hidup</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mengapa Penting bagi DKV -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code text-emerald-500"></i> Mengapa K3LH Sangat Penting Bagi DKV?
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                            Pekerjaan DKV tidak hanya menggunakan mesin berat. Bekerja di depan komputer 8 jam sehari, mengoperasikan kamera studio, atau menangani alat cetak memiliki **risiko tak kasat mata** seperti mata lelah, nyeri punggung (LBP), tersandung kabel, hingga korsleting listrik.
+                        </p>
+                        
+                        <!-- Regulatory Cards -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                            <div class="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-xl">
+                                <div class="text-xs font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-gavel"></i> UU No. 1 Tahun 1970
+                                </div>
+                                <p class="text-xs text-amber-700 dark:text-amber-400 mt-1">Dasar hukum utama Keselamatan Kerja di Indonesia yang masih berlaku resmi.</p>
+                            </div>
+                            <div class="p-3 bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 rounded-xl">
+                                <div class="text-xs font-bold text-sky-800 dark:text-sky-300 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt"></i> Permenaker No. 12 Thn 2015
+                                </div>
+                                <p class="text-xs text-sky-700 dark:text-sky-400 mt-1">Mengatur K3 Listrik pada instalasi, perlengkapan & peralatan di tempat kerja.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 Tujuan K3LH Grid -->
+                    <div class="border-t border-slate-200 dark:border-slate-700 pt-4 mt-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">5 Tujuan Utama Penerapan K3LH</span>
+                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs">
+                            <div class="p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+                                <i class="fa-solid fa-user-slash text-emerald-500 mb-1 block text-sm"></i>
+                                <span>Cegah Kecelakaan</span>
+                            </div>
+                            <div class="p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+                                <i class="fa-solid fa-stethoscope text-emerald-500 mb-1 block text-sm"></i>
+                                <span>Cegah Penyakit Kerja</span>
+                            </div>
+                            <div class="p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+                                <i class="fa-solid fa-briefcase-medical text-emerald-500 mb-1 block text-sm"></i>
+                                <span>Menjaga Kesehatan</span>
+                            </div>
+                            <div class="p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg">
+                                <i class="fa-solid fa-camera text-emerald-500 mb-1 block text-sm"></i>
+                                <span>Merawat Peralatan</span>
+                            </div>
+                            <div class="p-2 bg-slate-100 dark:bg-slate-700/50 rounded-lg col-span-2 sm:col-span-1">
+                                <i class="fa-solid fa-tree text-emerald-500 mb-1 block text-sm"></i>
+                                <span>Menjaga Lingkungan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION D & E: ERGONOMI KOMPUTER & WORKSTATION -->
+        <section id="ergonomi" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-xl">
+                    <i class="fa-solid fa-desktop text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">D & E. Ergonomi Komputer untuk Desainer</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Prinsip penataan tempat kerja untuk mencegah Gangguan Otot Rangka (MSDs)</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Visual Ergonomics Guide -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <h3 class="font-bold text-slate-900 dark:text-white text-base mb-4 flex items-center justify-between">
+                        <span>Standar Posisi Duduk Ideal Desainer</span>
+                        <span class="text-xs px-2.5 py-1 bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300 font-semibold rounded-full">Kemnaker Ergonomic Standard</span>
+                    </h3>
+
+                    <!-- Interactive Ergonomic Visual Canvas/Card -->
+                    <div class="relative bg-slate-100 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-3 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-emerald-500 shadow-sm">
+                                <div class="font-bold text-xs text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-eye text-emerald-500"></i> 1. Monitor
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sejajar mata (mata memandang lurus ke 1/3 bagian atas layar). Jarak 45–70 cm.</p>
+                            </div>
+
+                            <div class="p-3 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-emerald-500 shadow-sm">
+                                <div class="font-bold text-xs text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-hand-back-fist text-emerald-500"></i> 2. Keyboard & Mouse
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Siku membentuk sudut 90°-100°. Pergelangan tangan lurus dan rileks saat mengedit.</p>
+                            </div>
+
+                            <div class="p-3 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-emerald-500 shadow-sm">
+                                <div class="font-bold text-xs text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-chair text-emerald-500"></i> 3. Kursi & Sandaran
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Mendukung lekukan punggung bawah (Lumbal support). Paha sejajar lantai.</p>
+                            </div>
+
+                            <div class="p-3 bg-white dark:bg-slate-800 rounded-lg border-l-4 border-emerald-500 shadow-sm">
+                                <div class="font-bold text-xs text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-lightbulb text-emerald-500"></i> 4. Pencahayaan & Istirahat
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Hindari ruangan gelap dengan layar sangat terang. Gunakan aturan 20-20-20.</p>
+                            </div>
+                        </div>
+
+                        <!-- Rule 20-20-20 Banner -->
+                        <div class="p-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-mono font-bold text-lg">20</div>
+                                <div>
+                                    <div class="font-bold">Aturan Istirahat Mata 20-20-20</div>
+                                    <div class="text-blue-100 opacity-90">Setiap 20 menit, tatap objek berjarak 20 kaki (6 meter) selama 20 detik.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Ergonomics Calculator -->
+                <div id="ergonomi-calc" class="lg:col-span-5 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-blue-500"></i> Cek Skor Ergonomi Anda
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Geser pengaturan sesuai dengan kebiasaan kerja Anda saat ini:</p>
+
+                        <div class="space-y-4">
+                            <!-- Input 1 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-700 dark:text-slate-300">Posisi Tinggi Monitor:</span>
+                                    <span id="label-monitor" class="text-blue-600 dark:text-blue-400">Sejajar Mata</span>
+                                </div>
+                                <input type="range" id="input-monitor" min="0" max="2" step="1" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+
+                            <!-- Input 2 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-700 dark:text-slate-300">Pencahayaan Ruangan:</span>
+                                    <span id="label-light" class="text-blue-600 dark:text-blue-400">Cukup & Seimbang</span>
+                                </div>
+                                <input type="range" id="input-light" min="0" max="2" step="1" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+
+                            <!-- Input 3 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-700 dark:text-slate-300">Frekuensi Istirahat Screen-Time:</span>
+                                    <span id="label-break" class="text-blue-600 dark:text-blue-400">Setiap 30-60 Menit</span>
+                                </div>
+                                <input type="range" id="input-break" min="0" max="2" step="1" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+
+                            <!-- Input 4 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-700 dark:text-slate-300">Sandaran Punggung Kursi:</span>
+                                    <span id="label-chair" class="text-blue-600 dark:text-blue-400">Terganjal Lumbal</span>
+                                </div>
+                                <input type="range" id="input-chair" min="0" max="2" step="1" value="2" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Score Card -->
+                    <div class="mt-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
+                        <div class="text-xs text-slate-500 uppercase font-bold tracking-wider">Skor Kesehatan Workstation</div>
+                        <div id="ergo-score-display" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 my-1">100%</div>
+                        <div id="ergo-feedback" class="text-xs text-slate-600 dark:text-slate-300 font-medium">Sangat Aman! Risiko keluhan otot dan mata sangat rendah.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION F, G, H, I: RISIKO SPESIFIK BIDANG DKV -->
+        <section id="risiko-bidang" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-xl">
+                    <i class="fa-solid fa-layer-group text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">F, G, H, I. Risiko K3 Spesifik Pekerjaan DKV</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Kelistrikan, Fotografi, Videografi, dan Percetakan</p>
+                </div>
+            </div>
+
+            <!-- Interactive Tab Container -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                <!-- Tab Buttons -->
+                <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50">
+                    <button class="tab-btn px-5 py-3.5 text-xs font-bold text-purple-600 border-b-2 border-purple-600 flex items-center gap-2 transition" onclick="switchTab('tab-kelistrikan', this)">
+                        <i class="fa-solid fa-bolt"></i> Kelistrikan (Permenaker 12/2015)
+                    </button>
+                    <button class="tab-btn px-5 py-3.5 text-xs font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 border-b-2 border-transparent flex items-center gap-2 transition" onclick="switchTab('tab-fotografi', this)">
+                        <i class="fa-solid fa-camera"></i> Fotografi
+                    </button>
+                    <button class="tab-btn px-5 py-3.5 text-xs font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 border-b-2 border-transparent flex items-center gap-2 transition" onclick="switchTab('tab-videografi', this)">
+                        <i class="fa-solid fa-video"></i> Videografi
+                    </button>
+                    <button class="tab-btn px-5 py-3.5 text-xs font-bold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 border-b-2 border-transparent flex items-center gap-2 transition" onclick="switchTab('tab-percetakan', this)">
+                        <i class="fa-solid fa-print"></i> Percetakan
+                    </button>
+                </div>
+
+                <!-- Tab Content Boxes -->
+                <div class="p-6">
+                    <!-- Tab 1: Kelistrikan -->
+                    <div id="tab-kelistrikan" class="tab-content space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white text-lg">K3 Kelistrikan Peralatan Komputer & Studio</h3>
+                                <p class="text-xs text-slate-500">Regulasi: Permenaker No. 12 Tahun 2015 tentang K3 Listrik</p>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-full text-xs font-semibold">Potensi Korsleting & Setrum</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 bg-red-50 dark:bg-red-950/30 rounded-xl border border-red-200 dark:border-red-900/50">
+                                <h4 class="font-bold text-red-700 dark:text-red-400 text-xs uppercase mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-triangle-exclamation"></i> Potensi Bahaya
+                                </h4>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                    <li>Stop kontak terlalu penuh (*overload T-plug*).</li>
+                                    <li>Kabel terkelupas atau sambungan kendor.</li>
+                                    <li>Tangan basah saat memegang stop kontak / adaptor.</li>
+                                    <li>Kabel melintang liar di lantai tempat lalu lalang.</li>
+                                    <li>Perangkat terlalu panas (*overheating*) akibat akumulasi debu.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl border border-emerald-200 dark:border-emerald-900/50">
+                                <h4 class="font-bold text-emerald-700 dark:text-emerald-400 text-xs uppercase mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-check"></i> Kebiasaan Kerja Aman
+                                </h4>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside">
+                                    <li>**Sebelum:** Periksa fisik kabel & kondisi kelayakan alat.</li>
+                                    <li>**Saat:** Gunakan sesuai daya, hindari *daisy-chaining* steker.</li>
+                                    <li>**Sesudah:** Matikan sakelar utama, cabut dari colokan (bukan tarik kabel), dan gulung rapi.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Fotografi -->
+                    <div id="tab-fotografi" class="tab-content hidden space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white text-lg">K3 dalam Fotografi & Studio Foto</h3>
+                                <p class="text-xs text-slate-500">Pengelolaan lighting, tripod, backdrop & aset kamera</p>
+                            </div>
+                            <span class="px-3 py-1 bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300 rounded-full text-xs font-semibold">Bahaya Tersandung & Jatuh</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-exclamation text-amber-500"></i> Risiko Utama Studio Foto
+                                </h4>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5">
+                                    <li>• **Tripod di jalur jalan:** Kaki tripod yang melebar membuat talent/kru tersandung.</li>
+                                    <li>• **Lampu Studio Panas:** Continuous light dapat menyebabkan luka bakar jika disentuh langsung.</li>
+                                    <li>• **Kabel Lighting Melintang:** Tarikan kabel dapat merubuhkan light stand mahal.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs uppercase mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-shield-cat text-emerald-500"></i> Solusi Pencegahan
+                                </h4>
+                                <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-1.5">
+                                    <li>• Rekatkan kabel ke lantai menggunakan *gaffer tape* / Pelindung Kabel (Gutter).</li>
+                                    <li>• Pasang kantung pasir (*sandbag*) di kaki stand studio agar tidak mudah tumbang.</li>
+                                    <li>• Simpan kamera & lensa di Dry Cabinet jika tidak digunakan.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Videografi -->
+                    <div id="tab-videografi" class="tab-content hidden space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white text-lg">K3 dalam Videografi & Shooting Lokasi</h3>
+                                <p class="text-xs text-slate-500">Kompleksitas rig kamera, gimbal, mic cable, dan penataan alur berjalan</p>
+                            </div>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300 rounded-full text-xs font-semibold">Alur Kerja Kompleks</span>
+                        </div>
+                        <div class="p-4 bg-indigo-50 dark:bg-indigo-950/30 rounded-xl border border-indigo-200 dark:border-indigo-900/50">
+                            <h4 class="font-bold text-indigo-900 dark:text-indigo-300 text-xs mb-2">Prinsip Alur Kabel & Peralatan Video (Flow Safety):</h4>
+                            <div class="flex flex-wrap items-center justify-between text-xs font-semibold text-indigo-800 dark:text-indigo-200 bg-white dark:bg-slate-900 p-3 rounded-lg border border-indigo-100 dark:border-indigo-800 gap-2">
+                                <span>Kamera / Rig</span>
+                                <i class="fa-solid fa-arrow-right text-indigo-400"></i>
+                                <span>Tripod / Gimbal</span>
+                                <i class="fa-solid fa-arrow-right text-indigo-400"></i>
+                                <span>Manajemen Kabel (Taped)</span>
+                                <i class="fa-solid fa-arrow-right text-indigo-400"></i>
+                                <span>Lighting & Audio</span>
+                                <i class="fa-solid fa-arrow-right text-indigo-400"></i>
+                                <span class="text-emerald-600 font-bold">Jalur Bebas Steril</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 mt-3">
+                                Semakin banyak perangkat (monitor eksternal, mic boom, lighting, baterai V-mount), semakin krusial menjaga zona steril bergerak untuk videografer dan kru.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Percetakan -->
+                    <div id="tab-percetakan" class="tab-content hidden space-y-4">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 dark:text-white text-lg">K3 Produksi Cetak & Post-Press Finishing</h3>
+                                <p class="text-xs text-slate-500">Mesin cutting, cutter manual, bahaya kimia tinta, dan tumpukan kertas</p>
+                            </div>
+                            <span class="px-3 py-1 bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 rounded-full text-xs font-semibold">Risiko Luka Terpotong & Bahan Kimia</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                            <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <div class="font-bold text-xs text-rose-600 mb-1 flex items-center gap-1">
+                                    <i class="fa-solid fa-scissors"></i> Penggunaan Cutter
+                                </div>
+                                <p class="text-xs text-slate-600 dark:text-slate-300">Selalu gunakan penggaris besi, potong mengarah menjauhi anggota tubuh, dan kunci bilah pisau.</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <div class="font-bold text-xs text-amber-600 mb-1 flex items-center gap-1">
+                                    <i class="fa-solid fa-flask"></i> Tinta & Pelarut
+                                </div>
+                                <p class="text-xs text-slate-600 dark:text-slate-300">Gunakan ruangan dengan ventilasi udara yang baik saat memakai tinta sablon/pelarut kimia.</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700">
+                                <div class="font-bold text-xs text-blue-600 mb-1 flex items-center gap-1">
+                                    <i class="fa-solid fa-box-archive"></i> Tumpukan Bahan
+                                </div>
+                                <p class="text-xs text-slate-600 dark:text-slate-300">Tata kertas dan bahan cetak rapi, hindari menumpuk terlalu tinggi yang berisiko longsor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION J & K: APD & KESELAMATAN KEBAKARAN -->
+        <section id="apd-kebakaran" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 rounded-xl">
+                    <i class="fa-solid fa-fire-extinguisher text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">J & K. APD & Keselamatan Kebakaran</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Penggunaan Alat Pelindung Diri kontekstual dan penanganan darurat api</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- APD dalam DKV Card -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-shield text-rose-500"></i> APD (Alat Pelindung Diri) Spesifik DKV
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            Mitos K3: <span class="line-through text-slate-400">"Semua pekerjaan K3 wajib helm proyek"</span>. Dalam DKV, APD disesuaikan dengan **risiko riil jenis aktivitas**.
+                        </p>
+
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between items-center p-2.5 bg-slate-50 dark:bg-slate-900 rounded-lg">
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Desain Komputer</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 rounded font-mono">Kacamata Anti-Radiasi Bluelight</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2.5 bg-slate-50 dark:bg-slate-900 rounded-lg">
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Pemotongan Bahan Cetak</span>
+                                <span class="px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 rounded font-mono">Sarung Tangan Anti-Cutter / Alas Potong</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2.5 bg-slate-50 dark:bg-slate-900 rounded-lg">
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Cetakan Sablon / Chemical</span>
+                                <span class="px-2 py-0.5 bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300 rounded font-mono">Masker Respirator Organic Vapor</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2.5 bg-slate-50 dark:bg-slate-900 rounded-lg">
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Outdoor Outdoor Shooting</span>
+                                <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 rounded font-mono">Topi Pelindung / Sepatu Safety Outdoor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-400 italic mt-4">
+                        *Pengelolaan APD merupakan salah satu unit kompetensi K3 standar Kemnaker RI.
+                    </p>
+                </div>
+
+                <!-- Keselamatan Kebakaran & APAR Card -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-fire text-amber-500"></i> Keselamatan Kebakaran & APAR
+                        </h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4">
+                            Studio dan lab komputer rawan kebakaran kelas C (listrik) & A (kertas/bahan). Kemnaker memiliki aturan khusus pemasangan & pemeliharaan APAR.
+                        </p>
+
+                        <!-- APAR PASS steps -->
+                        <div class="bg-amber-50 dark:bg-amber-950/30 p-3.5 rounded-xl border border-amber-200 dark:border-amber-900/40 space-y-2">
+                            <div class="font-bold text-xs text-amber-900 dark:text-amber-300 flex items-center justify-between">
+                                <span>Metode Penggunaan APAR (P.A.S.S)</span>
+                                <i class="fa-solid fa-shield-cat"></i>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="bg-white dark:bg-slate-900 p-2 rounded border border-amber-100 dark:border-amber-900">
+                                    <span class="font-bold text-rose-600">P - Pull:</span> Tarik pin pengaman.
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 p-2 rounded border border-amber-100 dark:border-amber-900">
+                                    <span class="font-bold text-rose-600">A - Aim:</span> Arahkan selang ke pangkal api.
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 p-2 rounded border border-amber-100 dark:border-amber-900">
+                                    <span class="font-bold text-rose-600">S - Squeeze:</span> Tekan tuas pemicu.
+                                </div>
+                                <div class="bg-white dark:bg-slate-900 p-2 rounded border border-amber-100 dark:border-amber-900">
+                                    <span class="font-bold text-rose-600">S - Sweep:</span> Sapukan dari sisi ke sisi.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-red-100 dark:bg-red-950/50 text-red-800 dark:text-red-300 rounded-xl text-xs font-semibold flex items-center gap-2 mt-4">
+                        <i class="fa-solid fa-triangle-exclamation text-base"></i>
+                        <span>Penting: Jika api membesar, utamakan keselamatan jiwa! Segera evakuasi melalui Jalur Evakuasi.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION L, M, N: LINGKUNGAN HIDUP & BUDAYA KERJA 5R -->
+        <section id="lingkungan-5r" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 rounded-xl">
+                    <i class="fa-solid fa-leaf text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">L, M, N. Lingkungan Hidup & Budaya Kerja 5R</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Implementasi CP Fase E DKV: Kelestarian Lingkungan & Penataan 5R (5S)</p>
+                </div>
+            </div>
+
+            <!-- 5R Cards Interactive Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+                <!-- Ringkas -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 transition group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-2 group-hover:scale-110 transition">1</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Ringkas (Seiri)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pisahkan barang yang diperlukan dan tidak diperlukan. Buang sampah/kertas bekas tidak terpakai.</p>
+                </div>
+                <!-- Rapi -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 transition group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-2 group-hover:scale-110 transition">2</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Rapi (Seiton)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Letakkan barang sesuai tempatnya. Kamera di cabinet, cutter di kotak alat, file di folder.</p>
+                </div>
+                <!-- Resik -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 transition group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-2 group-hover:scale-110 transition">3</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Resik (Seiso)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Bersihkan layar monitor, meja, lensa kamera, dan area kerja setelah selesai produksi.</p>
+                </div>
+                <!-- Rawat -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 transition group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-2 group-hover:scale-110 transition">4</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Rawat (Seiketsu)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pertahankan standar Ringkas, Rapi, Resik secara konsisten melalui SOP dan jadwal.</p>
+                </div>
+                <!-- Rajin -->
+                <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-emerald-500 transition group">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-2 group-hover:scale-110 transition">5</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-sm">Rajin (Shitsuke)</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Jadikan K3LH dan 5R sebagai kebiasaan/budaya diri tanpa harus terus diperintah.</p>
+                </div>
+            </div>
+
+            <!-- Green DKV Initiatives Banner -->
+            <div class="bg-gradient-to-r from-teal-900 to-emerald-900 text-white p-6 rounded-2xl shadow-lg border border-teal-700/50">
+                <h3 class="font-bold text-base mb-3 flex items-center gap-2 text-teal-300">
+                    <i class="fa-solid fa-recycle"></i> Praktik Ramah Lingkungan (Green Design) dalam DKV:
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-teal-500/20">
+                        <span class="font-bold text-teal-300 block mb-1">1. Proofing Digital</span>
+                        <span>Periksa desain secara seksama di layar sebelum mencetak untuk mencegah pemborosan kertas akibat salah ketik.</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-teal-500/20">
+                        <span class="font-bold text-teal-300 block mb-1">2. Reuse Kertas Bekas</span>
+                        <span>Manfaatkan kertas cetak 1 sisi sebagai media *sketching* awal / draft ideasi.</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-teal-500/20">
+                        <span class="font-bold text-teal-300 block mb-1">3. Hemat Energi Listrik</span>
+                        <span>Matikan monitor, kompresor printer, dan lampu studio jika istirahat atau selesai kerja.</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-teal-500/20">
+                        <span class="font-bold text-teal-300 block mb-1">4. Pengelolaan Limbah</span>
+                        <span>Pisahkan botol cairan tinta, kemasan plastik, dan limbah kertas sesuai kategori.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION O & P: MATRIKS IDENTIFIKASI BAHAYA & RISIKO -->
+        <section id="matriks-bahaya" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-xl">
+                    <i class="fa-solid fa-table-list text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">O & P. Matriks Identifikasi Bahaya & Pengendalian Risiko</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Pola pikir K3LH: BAHAYA $\rightarrow$ RISIKO $\rightarrow$ PENGENDALIAN</p>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+                <!-- Search & Filter -->
+                <div class="p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex flex-wrap gap-3 items-center justify-between">
+                    <div class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                        Pilih Aktivitas DKV:
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <button onclick="filterTable('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold">Semua</button>
+                        <button onclick="filterTable('Desain')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold">Desain Grafis</button>
+                        <button onclick="filterTable('Fotografi')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold">Fotografi / Video</button>
+                        <button onclick="filterTable('Percetakan')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold">Percetakan</button>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 uppercase tracking-wider font-bold">
+                                <th class="p-3">Aktivitas DKV</th>
+                                <th class="p-3">Potensi Bahaya</th>
+                                <th class="p-3">Risiko</th>
+                                <th class="p-3">Tindakan Pengendalian</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hazard-table-body" class="divide-y divide-slate-200 dark:divide-slate-700">
+                            <!-- Row 1 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Desain">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Desain Grafis / Editing</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300 rounded">Monitor terlalu rendah / silau</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Nyeri leher & mata lelah</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Atur tinggi monitor sejajar mata, terapkan 20-20-20.</td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Desain">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Desain Grafis / Editing</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300 rounded">Duduk membungkuk lama</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Nyeri punggung bawah (LBP)</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Gunakan kursi ergonomis dengan lumbar support, ubah posisi.</td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Fotografi">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Fotografi / Videografi</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 rounded">Tripod & kabel di jalan</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Orang tersandung / kamera jatuh</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Tata kabel dengan gaffer tape, stabilkan kaki tripod.</td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Fotografi">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Fotografi / Videografi</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 rounded">Lampu studio berdaya tinggi</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Suhu panas / risiko kebakaran</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Jauhkan dari bahan mudah terbakar, gunakan sarung tangan panas saat menyetel.</td>
+                            </tr>
+                            <!-- Row 5 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Percetakan">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Percetakan / Finishing</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300 rounded">Penggunaan cutter tajam</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Luka terpotong tangan</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Gunakan penggaris besi penahan, potong perlahan sesuai SOP.</td>
+                            </tr>
+                            <!-- Row 6 -->
+                            <tr class="table-row-item hover:bg-slate-50 dark:hover:bg-slate-700/50 transition" data-cat="Percetakan">
+                                <td class="p-3 font-semibold text-slate-900 dark:text-white">Percetakan / Finishing</td>
+                                <td class="p-3"><span class="px-2 py-0.5 bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300 rounded">Sisa potongan kertas berserakan</span></td>
+                                <td class="p-3 text-slate-600 dark:text-slate-300">Area kerja tidak rapi & risiko api</td>
+                                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-medium">Terapkan budaya 5R (Ringkas & Resik), buang kertas ke tempat daur ulang.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION Q: SIMULASI INTERAKTIF "DETEKTIF K3LH" -->
+        <section id="simulasi" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Q. Interaktif: Game Detektif K3LH Studio</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Temukan 4 potensi bahaya pada studio DKV di bawah ini dan perbaiki!</p>
+                </div>
+            </div>
+
+            <!-- Detective Game Box -->
+            <div class="bg-slate-900 text-white p-6 rounded-2xl border border-slate-800 shadow-xl relative overflow-hidden">
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <div>
+                        <span class="text-xs text-amber-400 font-mono font-bold tracking-wider uppercase">Skenario Analisis Kasus DKV</span>
+                        <h3 class="text-lg font-bold">Studio Video & Editing "Ruang Kreatif"</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="px-3 py-1 bg-slate-800 rounded-lg text-xs font-mono">
+                            Bahaya Ditemukan: <span id="detective-score" class="text-emerald-400 font-bold">0</span> / 4
+                        </div>
+                        <button onclick="resetDetectiveGame()" class="px-3 py-1 bg-slate-800 hover:bg-slate-700 text-xs rounded-lg text-slate-300 transition">
+                            <i class="fa-solid fa-rotate-left"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Interactive Visual Canvas/Hotspot Area -->
+                <div class="relative bg-slate-800/80 rounded-xl border border-slate-700 p-6 min-h-[320px] flex flex-col justify-between">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Hotspot 1: Duduk Membungkuk -->
+                        <div id="hotspot-1" class="detective-card p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-400 transition cursor-pointer" onclick="solveHazard(1)">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold">1</span>
+                                    <span class="font-bold text-sm text-amber-300">Posisi Duduk Budi</span>
+                                </div>
+                                <span id="badge-1" class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300">BAHAYA</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">Budi mengedit video 6 jam membungkuk, monitor di bawah sejajar dada, ruangan gelap gulita.</p>
+                            <div id="solution-1" class="hidden mt-3 p-2.5 bg-emerald-950/60 border border-emerald-500/40 rounded-lg text-xs text-emerald-300">
+                                <i class="fa-solid fa-check mr-1"></i> **Perbaikan Ergonomi:** Tinggikan monitor sejajar mata, nyalakan lampu ruangan, dan gunakan ganjal lumbar.
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 2: Kabel Melintang -->
+                        <div id="hotspot-2" class="detective-card p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-400 transition cursor-pointer" onclick="solveHazard(2)">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold">2</span>
+                                    <span class="font-bold text-sm text-amber-300">Kabel Charger & Lighting</span>
+                                </div>
+                                <span id="badge-2" class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300">BAHAYA</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">Kabel lighting dan charger laptop melintang tepat di pintu masuk studio tanpa pelindung.</p>
+                            <div id="solution-2" class="hidden mt-3 p-2.5 bg-emerald-950/60 border border-emerald-500/40 rounded-lg text-xs text-emerald-300">
+                                <i class="fa-solid fa-check mr-1"></i> **Tindakan K3:** Tempel kabel ke lantai menggunakan gaffer tape atau lewatkan pinggir dinding.
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 3: Stop Kontak T-Plug Overload -->
+                        <div id="hotspot-3" class="detective-card p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-400 transition cursor-pointer" onclick="solveHazard(3)">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold">3</span>
+                                    <span class="font-bold text-sm text-amber-300">Colokan Listrik Bertumpuk</span>
+                                </div>
+                                <span id="badge-3" class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300">BAHAYA</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">1 stop kontak cabang dipasangi 5 steker adapter (PC, Monitor, Lampu Studio, Charger Kamera, Speaker).</p>
+                            <div id="solution-3" class="hidden mt-3 p-2.5 bg-emerald-950/60 border border-emerald-500/40 rounded-lg text-xs text-emerald-300">
+                                <i class="fa-solid fa-check mr-1"></i> **Pengendalian Listrik:** Bagi beban ke beberapa jalur stop kontak terpisah sesuai standar Permenaker 12/2015.
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 4: Sampah Kertas & Cutter Terbuka -->
+                        <div id="hotspot-4" class="detective-card p-4 rounded-xl bg-slate-900/80 border border-amber-500/30 hover:border-amber-400 transition cursor-pointer" onclick="solveHazard(4)">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-xs font-bold">4</span>
+                                    <span class="font-bold text-sm text-amber-300">Peralatan Cutting & Sampah</span>
+                                </div>
+                                <span id="badge-4" class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300">BAHAYA</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-2">Cutter terbuka ditaruh di tepi meja bersama tumpukan kertas bekas yang berserakan di dekat lampu studio panas.</p>
+                            <div id="solution-4" class="hidden mt-3 p-2.5 bg-emerald-950/60 border border-emerald-500/40 rounded-lg text-xs text-emerald-300">
+                                <i class="fa-solid fa-check mr-1"></i> **Penerapan 5R:** Kunci pisau cutter ke dalam kotak alat, bersihkan sampah kertas (Resik & Ringkas).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game Instruction Footnote -->
+                    <div id="game-complete-msg" class="hidden p-4 bg-emerald-600 text-slate-900 rounded-xl font-bold text-sm text-center mt-4">
+                        🎉 Selamat! Anda telah menyelesaikan Analisis Detektif K3LH. Seluruh potensi bahaya berhasil diidentifikasi dan dikendalikan!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION R: KUIS PEMAHAMAN & EVALUASI -->
+        <section id="kuis" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                    <i class="fa-solid fa-pen-to-square text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">R. Evaluasi Pemahaman Siswa (Kuis Mini)</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Uji pengetahuan Anda mengenai K3LH dalam DKV</p>
+                </div>
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <form id="quizForm" onsubmit="calculateQuizScore(event)" class="space-y-6">
+                    <!-- Q1 -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-sm text-slate-900 dark:text-white">
+                            1. Undang-Undang di Indonesia yang menjadi dasar hukum utama Keselamatan Kerja dan masih berlaku hingga kini adalah...
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q1" value="A" class="accent-emerald-600">
+                                <span>UU No. 13 Tahun 2003</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q1" value="B" class="accent-emerald-600">
+                                <span>UU No. 1 Tahun 1970</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q1" value="C" class="accent-emerald-600">
+                                <span>Permenaker No. 12 Tahun 2015</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q1" value="D" class="accent-emerald-600">
+                                <span>UU Hak Cipta 2014</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-sm text-slate-900 dark:text-white">
+                            2. Manakah penerapan prinsip Ergonomi Komputer yang benar bagi desainer grafis?
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q2" value="A" class="accent-emerald-600">
+                                <span>Posisi monitor jauh di bawah dada agar leher selalu menunduk</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q2" value="B" class="accent-emerald-600">
+                                <span>Ruangan sengaja digelapkan total dengan brightness layar 100%</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q2" value="C" class="accent-emerald-600">
+                                <span>Layar sejajar mata, siku membentuk 90°, dan istirahat mata berkala</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q2" value="D" class="accent-emerald-600">
+                                <span>Mengabaikan sandaran kursi demi posisi membungkuk</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="space-y-2">
+                        <label class="block font-bold text-sm text-slate-900 dark:text-white">
+                            3. Urutan Budaya Kerja 5R yang tepat dalam CP Fase E DKV adalah...
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q3" value="A" class="accent-emerald-600">
+                                <span>Ringkas – Rapi – Resik – Rawat – Rajin</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q3" value="B" class="accent-emerald-600">
+                                <span>Rapi – Resik – Rajin – Rencana – Ringkas</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q3" value="C" class="accent-emerald-600">
+                                <span>Rawat – Rajin – Rapi – Reaksi – Resik</span>
+                            </label>
+                            <label class="p-3 bg-slate-50 dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-700 flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="q3" value="D" class="accent-emerald-600">
+                                <span>Resik – Ringkas – Rencana – Rawat – Rapi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-700">
+                        <button type="submit" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition shadow-md">
+                            Kirim Jawaban
+                        </button>
+                        <div id="quizResult" class="hidden text-sm font-bold text-emerald-600 dark:text-emerald-400"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
+            <p class="font-semibold text-slate-300">Modul Interaktif K3LH Pembelajaran Dasar-Dasar Desain Komunikasi Visual (DKV)</p>
+            <p>Disusun berdasarkan Regulasi UU No. 1/1970, Permenaker No. 12/2015, dan Kurikulum CP Fase E DKV Kemendikbudristek & SKKNI Kemnaker RI.</p>
+            <p class="text-slate-600 pt-2">© 2026 K3LH DKV Interactive Learning Platform</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Tab Switcher for Section F, G, H, I
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-purple-600', 'border-purple-600');
+                btn.classList.add('text-slate-500', 'border-transparent');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            element.classList.remove('text-slate-500', 'border-transparent');
+            element.classList.add('text-purple-600', 'border-purple-600');
+        }
+
+        // Ergonomics Score Calculator Logic
+        const inputMonitor = document.getElementById('input-monitor');
+        const inputLight = document.getElementById('input-light');
+        const inputBreak = document.getElementById('input-break');
+        const inputChair = document.getElementById('input-chair');
+
+        const labelMonitor = document.getElementById('label-monitor');
+        const labelLight = document.getElementById('label-light');
+        const labelBreak = document.getElementById('label-break');
+        const labelChair = document.getElementById('label-chair');
+
+        const ergoScoreDisplay = document.getElementById('ergo-score-display');
+        const ergoFeedback = document.getElementById('ergo-feedback');
+
+        const ergoMap = {
+            monitor: ['Terlalu Rendah / Tinggi', 'Agak Miring', 'Sejajar Mata'],
+            light: ['Ruangan Gelap Gulita', 'Layar Silau Kontak Direct', 'Cukup & Seimbang'],
+            break: ['Jarang (>3 Jam Nonstop)', 'Kadang (2 Jam Sekali)', 'Setiap 30-60 Menit'],
+            chair: ['Tanpa Sandaran / Bungkuk', 'Sandaran Biasa', 'Terganjal Lumbal']
+        };
+
+        function updateErgoScore() {
+            const valM = parseInt(inputMonitor.value);
+            const valL = parseInt(inputLight.value);
+            const valB = parseInt(inputBreak.value);
+            const valC = parseInt(inputChair.value);
+
+            labelMonitor.innerText = ergoMap.monitor[valM];
+            labelLight.innerText = ergoMap.light[valL];
+            labelBreak.innerText = ergoMap.break[valB];
+            labelChair.innerText = ergoMap.chair[valC];
+
+            const totalScore = Math.round(((valM + valL + valB + valC) / 8) * 100);
+            ergoScoreDisplay.innerText = totalScore + '%';
+
+            if (totalScore >= 85) {
+                ergoScoreDisplay.className = "text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 my-1";
+                ergoFeedback.innerText = "Sangat Aman! Posisi ergonomis meminimalisir penyakit akibat kerja.";
+            } else if (totalScore >= 50) {
+                ergoScoreDisplay.className = "text-3xl font-extrabold text-amber-500 my-1";
+                ergoFeedback.innerText = "Cukup Baik. Ada potensi kelelahan mata / nyeri leher jika berjam-jam.";
+            } else {
+                ergoScoreDisplay.className = "text-3xl font-extrabold text-rose-600 my-1";
+                ergoFeedback.innerText = "Risiko Tinggi! Berpotensi memicu Low Back Pain & Eye Strain kronis.";
+            }
+        }
+
+        [inputMonitor, inputLight, inputBreak, inputChair].forEach(el => {
+            el.addEventListener('input', updateErgoScore);
+        });
+
+        // Hazard Matrix Filter Table Logic
+        function filterTable(category) {
+            const rows = document.querySelectorAll('.table-row-item');
+            const btns = document.querySelectorAll('.filter-btn');
+
+            btns.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-300');
+            });
+
+            event.target.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-300');
+            event.target.classList.add('bg-indigo-600', 'text-white');
+
+            rows.forEach(row => {
+                if (category === 'all' || row.dataset.cat === category) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Detektif K3LH Game Logic
+        let solvedHazards = new Set();
+
+        function solveHazard(id) {
+            if (solvedHazards.has(id)) return;
+
+            solvedHazards.add(id);
+            document.getElementById(`solution-${id}`).classList.remove('hidden');
+            const badge = document.getElementById(`badge-${id}`);
+            badge.innerText = "TERKENDALI";
+            badge.className = "text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold";
+
+            const card = document.getElementById(`hotspot-${id}`);
+            card.classList.remove('border-amber-500/30');
+            card.classList.add('border-emerald-500');
+
+            document.getElementById('detective-score').innerText = solvedHazards.size;
+
+            if (solvedHazards.size === 4) {
+                document.getElementById('game-complete-msg').classList.remove('hidden');
+            }
+        }
+
+        function resetDetectiveGame() {
+            solvedHazards.clear();
+            document.getElementById('detective-score').innerText = "0";
+            document.getElementById('game-complete-msg').classList.add('hidden');
+
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById(`solution-${i}`).classList.add('hidden');
+                const badge = document.getElementById(`badge-${i}`);
+                badge.innerText = "BAHAYA";
+                badge.className = "text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300";
+
+                const card = document.getElementById(`hotspot-${i}`);
+                card.classList.remove('border-emerald-500');
+                card.classList.add('border-amber-500/30');
+            }
+        }
+
+        // Quiz Calculation Logic
+        function calculateQuizScore(e) {
+            e.preventDefault();
+            const form = document.getElementById('quizForm');
+            let score = 0;
+
+            if (form.q1.value === 'B') score += 33;
+            if (form.q2.value === 'C') score += 33;
+            if (form.q3.value === 'A') score += 34;
+
+            const resDiv = document.getElementById('quizResult');
+            resDiv.classList.remove('hidden');
+            resDiv.innerText = `Skor Anda: ${score}/100 - ${score >= 90 ? 'Luar Biasa! Pemahaman K3LH Sangat Baik' : 'Cukup Baik, Pelajari Kembali Materi Ergonomi & 5R'}`;
+        }
+    </script>
+</body>
+</html>
