@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berpikir Kreatif DKV - Panduan Belajar Interaktif</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0edff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            purple: '#8b5cf6',
+                            amber: '#f59e0b',
+                            emerald: '#10b981',
+                            rose: '#f43f5e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 50%, #f43f5e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-purple flex items-center justify-center text-white font-bold text-xl shadow-md">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-lg text-slate-900 tracking-tight">DKV<span class="text-brand-600">Kreatif</span></span>
+                    <span class="block text-xs text-slate-500 font-medium">Modul Pembelajaran DKV</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#pengertian" class="hover:text-brand-600 transition-colors">Apa itu Kreatif?</a>
+                <a href="#bukan-menggambar" class="hover:text-brand-600 transition-colors">Bukan Cuma Gambar</a>
+                <a href="#ciri-kreatif" class="hover:text-brand-600 transition-colors">4 Ciri Utama</a>
+                <a href="#prinsip-proses" class="hover:text-brand-600 transition-colors">Alur Solusi DKV</a>
+                <a href="#simulator" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition-all shadow-sm hover:shadow">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Simulasikan Ide
+                </a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2">
+            <a href="#pengertian" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Apa itu Kreatif?</a>
+            <a href="#bukan-menggambar" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Bukan Cuma Gambar</a>
+            <a href="#ciri-kreatif" class="block py-2 text-slate-700 font-medium hover:text-brand-600">4 Ciri Utama</a>
+            <a href="#prinsip-proses" class="block py-2 text-slate-700 font-medium hover:text-brand-600">Alur Solusi DKV</a>
+            <a href="#simulator" class="block py-2 text-brand-600 font-semibold"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Simulasikan Ide</a>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-blue-50/60 via-slate-50 to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4 border border-brand-200">
+                    <i class="fa-solid fa-palette"></i> Desain Komunikasi Visual
+                </span>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Mengasah Kemampuan <br>
+                    <span class="gradient-text">Berpikir Kreatif DKV</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
+                    Kreativitas di DKV bukan sekadar <span class="font-semibold text-slate-800">"bisa menggambar bagus"</span>, melainkan kemampuan menemukan cara visual yang paling tepat dan berkesan untuk menyampaikan pesan.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="#pengertian" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5">
+                        Pelajari Materi <i class="fa-solid fa-arrow-down ml-2 text-xs"></i>
+                    </a>
+                    <a href="#simulator" class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-semibold text-sm border border-slate-300 shadow-sm transition-all">
+                        Coba Simulator Ide <i class="fa-solid fa-rocket ml-2 text-amber-500"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengertian" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="font-heading text-3xl font-bold text-slate-900">1. Apa itu Berpikir Kreatif?</h2>
+            <p class="mt-3 text-slate-600">Memahami arti dasar kreativitas dalam dunia komunikasi visual.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+            <!-- Definiton Card -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-brand-600 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-4">Definisi Utama</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        Berpikir kreatif adalah kemampuan untuk <span class="font-semibold text-slate-900 bg-yellow-100 px-1 rounded">menghasilkan gagasan atau cara baru</span> dalam melihat dan menyelesaikan suatu masalah.
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-xl border-l-4 border-brand-600 text-slate-700 font-medium">
+                        "Dalam DKV, tujuan utamanya adalah menemukan cara visual yang tepat, efektif, dan menarik untuk menyampaikan pesan kepada audiens."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparative Case Study -->
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider border border-amber-500/30">
+                            Studi Kasus Kantin Sekolah
+                        </span>
+                        <i class="fa-solid fa-utensils text-slate-400"></i>
+                    </div>
+                    <h4 class="text-slate-300 text-sm font-semibold uppercase tracking-wider mb-2">Masalah: Banyak Sampah Makanan Terbuang</h4>
+                    
+                    <div class="space-y-4 mt-6">
+                        <!-- Ide Biasa -->
+                        <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700/80">
+                            <div class="flex items-center gap-2 text-rose-400 font-semibold mb-1 text-sm">
+                                <i class="fa-solid fa-circle-xmark"></i> Ide Biasa (Kurang Menarik)
+                            </div>
+                            <p class="text-slate-300 font-medium">Membuat poster dengan tulisan: <span class="text-white font-bold italic">"Jangan Buang Makanan!"</span></p>
+                        </div>
+
+                        <!-- Ide Kreatif -->
+                        <div class="p-4 rounded-xl bg-brand-900/60 border border-brand-500/50 relative overflow-hidden">
+                            <div class="absolute -right-4 -bottom-4 opacity-10 text-brand-300 text-8xl font-black">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <div class="flex items-center gap-2 text-emerald-400 font-semibold mb-1 text-sm">
+                                <i class="fa-solid fa-circle-check"></i> Ide Lebih Kreatif (DKV)
+                            </div>
+                            <p class="text-slate-200">
+                                Visual gambar <span class="text-white font-bold">Piring Kosong</span> dengan headline mendalam:
+                            </p>
+                            <p class="text-amber-300 font-bold text-lg mt-1 font-heading">
+                                "Yang Terbuang Bukan Cuma Makanan."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-700 text-xs text-slate-400 flex items-center justify-between">
+                    <span>Pesan yang sama</span>
+                    <span class="text-slate-300 font-semibold">→ Cara penyampaian lebih berkesan!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bukan-menggambar" class="py-16 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-extrabold text-sm uppercase tracking-wider">Pesan Penting untuk Siswa</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-1">2. Kreatif ≠ Hanya Menggambar</h2>
+                <p class="mt-3 text-slate-600 text-base">
+                    Siswa yang tidak terlalu mahir menggambar <span class="font-bold text-slate-800">tetap bisa sangat kreatif!</span> Karena kreativitas DKV mengekspresikan diri melalui beragam medium dan elemen.
+                </p>
+            </div>
+
+            <!-- 11 Aspects Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-12">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-font text-2xl text-brand-600 mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Pemilihan Kata</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-shapes text-2xl text-accent-purple mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Konsep</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-palette text-2xl text-accent-rose mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Warna</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-cube text-2xl text-accent-amber mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Bentuk</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-camera text-2xl text-accent-emerald mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Foto</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-table-cells-large text-2xl text-brand-600 mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Layout</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-video text-2xl text-accent-rose mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Video</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-text-height text-2xl text-accent-purple mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Tipografi</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-icons text-2xl text-accent-amber mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Media</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all">
+                    <i class="fa-solid fa-comments text-2xl text-accent-emerald mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Cara Pesan</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center hover:border-brand-500 hover:shadow-md transition-all col-span-2 sm:col-span-1">
+                    <i class="fa-solid fa-bullhorn text-2xl text-brand-600 mb-2"></i>
+                    <p class="font-semibold text-slate-800 text-sm">Kampanye</p>
+                </div>
+            </div>
+
+            <!-- Example Problem & Diverse Media Solutions -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-200 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-rose-500">Contoh Kasus Nyata</span>
+                        <h3 class="text-2xl font-bold font-heading text-slate-900">Masalah: Siswa Sering Terlambat Masuk Sekolah</h3>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-50 text-amber-800 font-semibold text-sm border border-amber-200">
+                        <i class="fa-solid fa-lightbulb text-amber-500"></i> 1 Masalah → Banyak Kemungkinan Solusi!
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-brand-600 font-bold mb-1"><i class="fa-solid fa-face-laugh-squint mr-1"></i> Poster Humor / Meme</div>
+                        <p class="text-sm text-slate-600">Menggunakan gaya humor atau format meme yang relatable dengan siswa.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-purple font-bold mb-1"><i class="fa-solid fa-book-open mr-1"></i> Komik Pendek</div>
+                        <p class="text-sm text-slate-600">Cerita bergambar 3 panel tentang perjuangan bangun pagi yang kocak.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-emerald font-bold mb-1"><i class="fa-solid fa-ticket mr-1"></i> Kartu Izin Terlambat</div>
+                        <p class="text-sm text-slate-600">Desain fisik kartu surat izin yang unik dan interaktif saat diserahkan.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-rose font-bold mb-1"><i class="fa-solid fa-clock mr-1"></i> Jam Wajah Guru</div>
+                        <p class="text-sm text-slate-600">Desain jam dinding sekolah khusus di mana jarum jam berubah ekspresi wajah guru.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-amber font-bold mb-1"><i class="fa-solid fa-flag mr-1"></i> Kampanye "7 Menit Pertama"</div>
+                        <p class="text-sm text-slate-600">Gerakan kampanye media sosial yang menyoroti hal seru di 7 menit awal jam kelas.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-brand-600 font-bold mb-1"><i class="fa-solid fa-note-sticky mr-1"></i> Stiker Pintu Kelas</div>
+                        <p class="text-sm text-slate-600">Stiker visual interaktif pada pintu kelas yang menyambut siswa dengan pesan unik.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-purple font-bold mb-1"><i class="fa-solid fa-mobile-screen-button mr-1"></i> Video Pendek (Reels/TikTok)</div>
+                        <p class="text-sm text-slate-600">Konten video pendek edukatif dengan gaya sinematik yang kekinian.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-400 transition-all">
+                        <div class="text-accent-emerald font-bold mb-1"><i class="fa-solid fa-bullhorn mr-1"></i> Instalasi Pengingat</div>
+                        <p class="text-sm text-slate-600">Karya instalasi sederhana di gerbang sekolah yang mencuri perhatian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ciri-kreatif" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-accent-purple font-extrabold text-sm uppercase tracking-wider">Kemampuan Utama Siswa</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-1">3. Ciri-ciri Berpikir Kreatif (4 C)</h2>
+            <p class="mt-3 text-slate-600">Empat indikator sederhana yang bisa dilatih oleh setiap siswa DKV.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- A. Fluency -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:border-brand-500 transition-all relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xl">
+                        A
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Fluency (Kelancaran)</h3>
+                        <p class="text-xs font-semibold text-brand-600 uppercase">Menghasilkan Banyak Ide</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Kemampuan untuk melahirkan sebanyak mungkin gagasan dalam waktu singkat tanpa langsung menilai benar atau salah.
+                </p>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1">
+                    <p class="font-bold text-slate-900"><i class="fa-solid fa-question-circle text-brand-500 mr-1"></i> Contoh Pertanyaan Latihan:</p>
+                    <p class="italic">"Apa saja desain yang bisa dibuat untuk mengingatkan siswa membuang sampah?"</p>
+                    <p class="text-emerald-600 font-semibold pt-1">→ Kunci: Hasilkan jawaban terbanyak lebih dulu!</p>
+                </div>
+            </div>
+
+            <!-- B. Flexibility -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:border-accent-purple transition-all relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-accent-purple flex items-center justify-center font-bold text-xl">
+                        B
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Flexibility (Keluwesan)</h3>
+                        <p class="text-xs font-semibold text-accent-purple uppercase">Berbagai Sudut Pandang</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Kemampuan menghasilkan ide dari sudut pandang, kategori, atau media yang berbeda-beda.
+                </p>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1">
+                    <p class="font-bold text-slate-900"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Contoh Kasus: "Siswa Malas Membaca"</p>
+                    <div class="flex flex-wrap gap-1.5 pt-1">
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Poster</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Video</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Komik</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">QR Code</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Infografis</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Konten IG</span>
+                        <span class="px-2 py-0.5 bg-white border rounded text-slate-600">Bookmark</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C. Originality -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:border-accent-amber transition-all relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-accent-amber flex items-center justify-center font-bold text-xl">
+                        C
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Originality (Keaslian)</h3>
+                        <p class="text-xs font-semibold text-accent-amber uppercase">Ide Unik & Berbeda</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Kemampuan menghasilkan gagasan unik yang jarang dipikirkan oleh orang lain pada umumnya.
+                </p>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="bg-rose-50 p-3 rounded-lg border border-rose-200 text-rose-800">
+                        <span class="font-bold block text-rose-900 mb-1">Ide Umum:</span>
+                        "Poster slogan ajakan kebersihan standar."
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-emerald-800">
+                        <span class="font-bold block text-emerald-900 mb-1">Ide Unik (Original):</span>
+                        "Tempat sampah berkarakter, tiap jenis sampah punya ekspresi wajah berbeda."
+                    </div>
+                </div>
+            </div>
+
+            <!-- D. Elaboration -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:border-accent-emerald transition-all relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-accent-emerald flex items-center justify-center font-bold text-xl">
+                        D
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Elaboration (Pengembangan)</h3>
+                        <p class="text-xs font-semibold text-accent-emerald uppercase">Mematangkan Konsep</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                    Kemampuan memperkaya dan merinci ide sederhana menjadi konsep desain yang matang dan siap dieksekusi.
+                </p>
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs space-y-1.5">
+                    <p class="font-bold text-slate-800">Dari Ide Sederhana "Poster Makanan Sehat" dikembangkan menjadi:</p>
+                    <div class="flex flex-wrap gap-1 text-[11px]">
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">Target: Siswa SMK</span>
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">Media: A3</span>
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">Warna Cerah</span>
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">Headline Menarik</span>
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">Ilustrasi Bekal</span>
+                        <span class="bg-white px-2 py-0.5 rounded border text-slate-700">QR Code Info Nutrisi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prinsip-proses" class="py-16 bg-gradient-to-b from-slate-900 to-slate-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Golden Rule -->
+            <div class="mb-16 bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl flex-shrink-0 border border-amber-500/30">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading text-xl font-bold text-white">Prinsip Penting Proses Kreatif</h3>
+                        <p class="text-slate-300 text-sm mt-1">
+                            <span class="text-amber-400 font-bold">Jangan terburu-buru bilang "Ide itu jelek".</span> Pada tahap awal, <span class="text-white font-semibold underline">kuantitas (banyak ide) lebih penting</span> daripada langsung memikirkan satu ide sempurna.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-slate-900/80 px-6 py-4 rounded-xl border border-slate-700 text-xs font-mono text-slate-300 w-full md:w-auto text-center flex-shrink-0">
+                    <span class="text-emerald-400 font-bold block mb-1"><i class="fa-solid fa-circle-check"></i> PROSES YANG BENAR:</span>
+                    Menghasilkan → Memilih → Mengembangkan → Memperbaiki
+                </div>
+            </div>
+
+            <!-- Flowchart DKV -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-500 font-extrabold text-sm uppercase tracking-wider">Metode Kerja DKV</span>
+                <h2 class="font-heading text-3xl font-bold text-white mt-1">Alur: Masalah → Ide → Solusi DKV</h2>
+                <p class="text-slate-400 text-sm mt-2">Klik tiap langkah untuk melihat penjelasan rinci.</p>
+            </div>
+
+            <!-- Interactive Flow Steps -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 text-center">
+                <!-- Step 1 -->
+                <div onclick="showStepInfo(1)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">01</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">MASALAH</div>
+                    <i class="fa-solid fa-triangle-exclamation text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 2 -->
+                <div onclick="showStepInfo(2)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">02</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">MENGAMATI</div>
+                    <i class="fa-solid fa-eye text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 3 -->
+                <div onclick="showStepInfo(3)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">03</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">KEBUTUHAN</div>
+                    <i class="fa-solid fa-magnifying-glass text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 4 -->
+                <div onclick="showStepInfo(4)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">04</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">BANYAK IDE</div>
+                    <i class="fa-solid fa-lightbulb text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 5 -->
+                <div onclick="showStepInfo(5)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">05</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">MEMILIH IDE</div>
+                    <i class="fa-solid fa-check-double text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 6 -->
+                <div onclick="showStepInfo(6)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200">
+                    <div class="text-xs font-bold text-brand-400 mb-1 step-num">06</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">PENGEMBANGAN</div>
+                    <i class="fa-solid fa-pen-ruler text-slate-400 text-lg"></i>
+                </div>
+
+                <!-- Step 7 -->
+                <div onclick="showStepInfo(7)" class="step-card bg-slate-800 hover:bg-brand-600 border border-slate-700 rounded-xl p-4 cursor-pointer transition-all duration-200 col-span-2 lg:col-span-1">
+                    <div class="text-xs font-bold text-emerald-400 mb-1 step-num">07</div>
+                    <div class="font-heading font-bold text-sm text-white mb-1">SOLUSI DKV</div>
+                    <i class="fa-solid fa-bullseye text-emerald-400 text-lg"></i>
+                </div>
+            </div>
+
+            <!-- Dynamic Info Display Box -->
+            <div id="step-info-box" class="mt-8 bg-slate-800/90 border border-brand-500/40 rounded-2xl p-6 transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 rounded-xl bg-brand-500/20 text-brand-400 text-xl font-bold">
+                        <i id="step-icon" class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div>
+                        <h4 id="step-title" class="text-lg font-bold text-white font-heading">Klik salah satu langkah alur di atas</h4>
+                        <p id="step-desc" class="text-slate-300 text-sm mt-1 leading-relaxed">
+                            Pilih tahap alur kerja DKV untuk melihat contoh konkret bagaimana gagasan diproses dari awal hingga akhir.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulator" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-tr from-brand-600 via-brand-700 to-accent-purple rounded-3xl p-6 sm:p-10 text-white shadow-2xl">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider">Fitur Interaktif Siswa</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mt-2">Simulator Generasi Ide DKV</h2>
+                <p class="text-brand-100 text-sm sm:text-base mt-2">
+                    Pilih sebuah permasalahan sekolah, lalu simulasikan bagaimana 4 Ciri Berpikir Kreatif (Fluency, Flexibility, Originality, Elaboration) bekerja menghasilkan karya DKV!
+                </p>
+            </div>
+
+            <!-- Selector -->
+            <div class="max-w-xl mx-auto bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 mb-8">
+                <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-brand-100">Pilih Permasalahan Sekolah:</label>
+                <select id="problem-select" onchange="updateSimulator()" class="w-full bg-white text-slate-900 rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner">
+                    <option value="tumbler">1. Siswa sering lupa membawa Tumbler / Botol Minum</option>
+                    <option value="sampah">2. Siswa enggan memilah jenis sampah organik & anorganik</option>
+                    <option value="perpustakaan">3. Perpustakaan sekolah sepi pengunjung</option>
+                </select>
+            </div>
+
+            <!-- Output Cards -->
+            <div id="simulator-output" class="grid md:grid-cols-2 gap-4 text-slate-800">
+                <!-- Javascript will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm text-center">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h2 class="font-heading text-2xl font-bold text-slate-900">Rangkuman Kunci Untuk Siswa</h2>
+                <p class="text-slate-600 text-sm mt-2 max-w-xl mx-auto">
+                    Kreativitas bukan bakat ajaib, tapi keterampilan berproses yang bisa terus dilatih dan dikembangkan!
+                </p>
+
+                <div class="grid sm:grid-cols-3 gap-4 mt-8 text-left text-xs">
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <span class="font-bold text-brand-600 block mb-1">1. Pesan Adalah Utama</span>
+                        Visual menarik ada untuk mendukung kejelasan dan daya pikat pesan.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <span class="font-bold text-accent-purple block mb-1">2. Eksplorasi Luas</span>
+                        Gunakan kata, warna, meme, komik, jam, hingga video.
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                        <span class="font-bold text-emerald-600 block mb-1">3. Jangan Takut Salah</span>
+                        Kumpulkan ide sebanyak-banyaknya sebelum memilih yang terbaik.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-medium text-slate-300">Modul Interaktif DKV: Berpikir Kreatif dalam Desain Komunikasi Visual</p>
+            <p class="mt-2 text-slate-500">Dirancang untuk Pembelajaran SMK / SMA DKV & Seni Komunikasi Visual</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Data for DKV Process Steps
+        const stepsData = {
+            1: {
+                title: "1. MASALAH",
+                icon: "fa-triangle-exclamation",
+                desc: "Contoh: Siswa sering lupa membawa tumbler botol minum ke sekolah, menyebabkan tingginya sampah plastik sekali pakai."
+            },
+            2: {
+                title: "2. MENGAMATI",
+                icon: "fa-eye",
+                desc: "Melihat perilaku siswa: Mengapa mereka lupa? Apakah tumbler terasa berat, desainnya kurang keren, atau tidak ada pengingat visual di rumah/gerbang?"
+            },
+            3: {
+                title: "3. MENEMUKAN KEBUTUHAN",
+                icon: "fa-magnifying-glass",
+                desc: "Siswa butuh pesan pengingat yang menyenangkan, tidak menggurui, dan mudah diingat sebelum berangkat atau saat di sekolah."
+            },
+            4: {
+                title: "4. MENGHASILKAN BANYAK IDE (Fluency & Flexibility)",
+                icon: "fa-lightbulb",
+                desc: "Brainstorming beragam media: Poster A3, Stiker cermin, Reminder di grup WA, Meme lucu, Video komedi pendek, Desain maskot botol."
+            },
+            5: {
+                title: "5. MEMILIH IDE (Originality)",
+                icon: "fa-check-double",
+                desc: "Memilih ide paling unik dan efektif: 'Poster Karakter Tumbler Setia' digabung dengan 'Stiker Cermin Wastafel'."
+            },
+            6: {
+                title: "6. MENGEMBANGKAN IDE (Elaboration)",
+                icon: "fa-pen-ruler",
+                desc: "Merinci karya: Menentukan gaya ilustrasi kartun cerah, headline 'Tumbler Jangan Ketinggalan!', layout A3, serta posisi penempelan stiker."
+            },
+            7: {
+                title: "7. SOLUSI DKV",
+                icon: "fa-bullseye",
+                desc: "Produk Kampanye Visual DKV siap dipasang dan dipublikasikan untuk mengubah perilaku siswa secara positif!"
+            }
+        };
+
+        function showStepInfo(stepNum) {
+            const data = stepsData[stepNum];
+            if (!data) return;
+
+            document.getElementById('step-title').innerText = data.title;
+            document.getElementById('step-desc').innerText = data.desc;
+            document.getElementById('step-icon').className = `fa-solid ${data.icon}`;
+
+            // Highlight selected card styling
+            const cards = document.querySelectorAll('.step-card');
+            cards.forEach((card, index) => {
+                if (index + 1 === stepNum) {
+                    card.classList.add('ring-2', 'ring-brand-400', 'bg-brand-600');
+                    card.classList.remove('bg-slate-800');
+                } else {
+                    card.classList.remove('ring-2', 'ring-brand-400', 'bg-brand-600');
+                    card.classList.add('bg-slate-800');
+                }
+            });
+        }
+
+        // Data for Simulator
+        const simulatorData = {
+            tumbler: {
+                fluency: "Membuat poster, stiker loker, meme tumbler haus, video TikTok, desain gantungan kunci pengingat, stiker cermin.",
+                flexibility: "Media beragam: Poster cetak, Konten Reel Instagram, Stiker fisik, sampai Animasi papan informasi sekolah.",
+                originality: "Karakter maskot botol minum sedih yang melambaikan tangan dengan tulisan: 'Jangan Tinggalkan Aku di Rumah!'",
+                elaboration: "Target: Siswa SMK | Media: Poster A3 + Stiker Cermin | Gaya: Kartun Pop Art | Headline: 'Bawa Tumblermu, Selamatkan Isian Kantongmu!'"
+            },
+            sampah: {
+                fluency: "Kotak sampah animasi, stiker petunjuk humor, infografis jenis sampah, video eksperimen sosial, komik strip.",
+                flexibility: "Solusi visual: Tempat sampah interaktif, konten infografis digital, komik cetak mading, stiker lantai menuju tempat sampah.",
+                originality: "Tempat sampah dengan ekspresi wajah interaktif: Organik tersenyum pada sisa apel, Anorganik tersenyum pada botol plastik.",
+                elaboration: "Target: Warga sekolah | Media: Stiker Vinil Pintu Sampah | Warna: Hijau (Organik) & Kuning (Anorganik) | Ilustrasi Ekspresi Wajah."
+            },
+            perpustakaan: {
+                fluency: "Poster poster buku populer, bookmark estetis, meme 'plot twist' buku, pameran kover buku ulang, video trailer buku.",
+                flexibility: "Berbagai media: Pembatas buku kreatif, Postingan Feed IG 'Rekomendasi Minggu Ini', Spanduk humor, Spot foto Instagramable.",
+                originality: "Pembatas buku berbentuk 'Pintu Masuk Dunia Lain' yang jika disatukan membentuk peta rahasia perpustakaan.",
+                elaboration: "Target: Siswa Gemar Membaca & Foto | Media: Bookmark Die-cut + Feed IG | Tema: Petualangan Literasi | QR Code katalog buku."
+            }
+        };
+
+        function updateSimulator() {
+            const val = document.getElementById('problem-select').value;
+            const data = simulatorData[val];
+            const output = document.getElementById('simulator-output');
+
+            if (!data || !output) return;
+
+            output.innerHTML = `
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-brand-100">
+                    <div class="flex items-center gap-2 text-brand-600 font-bold text-sm mb-2">
+                        <i class="fa-solid fa-list-check"></i> A. Fluency (Kelancaran Ide)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${data.fluency}</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-purple-100">
+                    <div class="flex items-center gap-2 text-accent-purple font-bold text-sm mb-2">
+                        <i class="fa-solid fa-arrows-split-up-and-left"></i> B. Flexibility (Keluwesan Media)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${data.flexibility}</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-amber-100">
+                    <div class="flex items-center gap-2 text-amber-600 font-bold text-sm mb-2">
+                        <i class="fa-solid fa-sparkles"></i> C. Originality (Keaslian Unik)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${data.originality}</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-emerald-100">
+                    <div class="flex items-center gap-2 text-emerald-600 font-bold text-sm mb-2">
+                        <i class="fa-solid fa-layer-group"></i> D. Elaboration (Pengembangan Konsep)
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${data.elaboration}</p>
+                </div>
+            `;
+        }
+
+        // Initialize default view
+        window.onload = function() {
+            showStepInfo(1);
+            updateSimulator();
+        };
+    </script>
+</body>
+</html>
