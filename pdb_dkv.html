@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proses Desain & Bisnis Industri DKV - Kelas X SMK</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+        .dark ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased transition-colors duration-200">
+
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-slate-200 dark:bg-slate-800 z-50">
+        <div id="progress-bar" class="h-full bg-blue-600 transition-all duration-150 w-0"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <button id="sidebar-toggle" class="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <div class="flex items-center space-x-2">
+                    <span class="bg-blue-600 text-white text-xs font-extrabold px-2.5 py-1 rounded-md tracking-wider">FASE E</span>
+                    <h1 class="font-bold text-lg sm:text-xl text-slate-900 dark:text-white truncate">Dasar-Dasar DKV</h1>
+                </div>
+            </div>
+
+            <!-- Header Right Action Tools -->
+            <div class="flex items-center space-x-3">
+                <a href="#interactive-tools" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 px-3 py-1.5 rounded-full hover:bg-blue-100 transition">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Tool Praktik
+                </a>
+                <button id="theme-toggle" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg" title="Ganti Mode Terang/Gelap">
+                    <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Sidebar Navigation -->
+            <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out lg:static lg:w-64 lg:p-0 lg:bg-transparent lg:border-none lg:z-auto overflow-y-auto">
+                <div class="flex justify-between items-center lg:hidden mb-6">
+                    <span class="font-bold text-slate-900 dark:text-white">Daftar Isi Materi</span>
+                    <button id="sidebar-close" class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="sticky top-24 space-y-6">
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3">Navigasi Bab</h3>
+                        <nav class="space-y-1 text-sm font-medium" id="nav-menu">
+                            <a href="#materi-a" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">A. Tujuan Pembelajaran</a>
+                            <a href="#materi-b" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">B. Proses Desain vs Bisnis</a>
+                            <a href="#materi-c" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">C. 9 Tahap Proses Desain</a>
+                            <a href="#materi-d" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">D. Industri & Sumber Proyek</a>
+                            <a href="#materi-e" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">E. Tahapan Bisnis DKV</a>
+                            <a href="#materi-f" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">F. Perencanaan Proyek</a>
+                            <a href="#materi-g" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">G. Peran & Tim Industri</a>
+                            <a href="#materi-h" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">H. Model Bisnis DKV</a>
+                            <a href="#materi-i" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">I. Etika & Profesionalisme</a>
+                            <a href="#materi-j" class="nav-link block px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition">J. Studi Kasus UMKM</a>
+                        </nav>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+                        <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3">Fitur Interaktif</h3>
+                        <div class="space-y-2">
+                            <a href="#interactive-brief" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg text-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 dark:text-emerald-300 hover:bg-emerald-100 transition">
+                                <i class="fa-solid fa-pen-to-square"></i> Generator Design Brief
+                            </a>
+                            <a href="#interactive-calc" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg text-amber-700 bg-amber-50 dark:bg-amber-950/40 dark:text-amber-300 hover:bg-amber-100 transition">
+                                <i class="fa-solid fa-calculator"></i> Kalkulator Harga Proyek
+                            </a>
+                            <a href="#interactive-quiz" class="flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-lg text-purple-700 bg-purple-50 dark:bg-purple-950/40 dark:text-purple-300 hover:bg-purple-100 transition">
+                                <i class="fa-solid fa-brain"></i> Quiz & Kuis Pemahaman
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Overlay for Mobile Sidebar -->
+            <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 hidden lg:hidden"></div>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 min-w-0 space-y-12">
+
+                <!-- Hero Section -->
+                <section class="bg-gradient-to-br from-blue-600 via-indigo-600 to-slate-900 rounded-2xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
+                    <div class="relative z-10 space-y-4">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-xs font-medium border border-white/20">
+                            <i class="fa-solid fa-graduation-cap"></i> Modul Pembelajaran SMK Kelas X
+                        </div>
+                        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                            Proses Desain & Bisnis Industri Desain Komunikasi Visual (DKV)
+                        </h1>
+                        <p class="text-blue-100 text-sm sm:text-base max-w-3xl leading-relaxed">
+                            Panduan komprehensif alur kerja perancangan visual, manajemen proyek, estimasi anggaran, hingga komersialisasi karya kreatif mengacu pada Capaian Pembelajaran Kurikulum Kemdikbud & Komdigi RI.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- BAB A: TUJUAN PEMBELAJARAN -->
+                <section id="materi-a" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            A
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Tujuan Pembelajaran</h2>
+                    </div>
+
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                        Setelah mempelajari modul materi ini, peserta didik diharapkan mampu memahami dan menerapkan alur profesional dalam industri DKV:
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Menjelaskan pengertian proses desain dan proses bisnis dalam industri DKV.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Mengidentifikasi tahapan perancangan karya desain dari kebutuhan klien hingga penyelesaian.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Menjelaskan fungsi design brief, riset, ideasi, prototipe, revisi, dan produksi.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Mengidentifikasi pihak-pihak yang terlibat dalam industri beserta perannya.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">5</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Menganalisis kebutuhan waktu, biaya, peralatan, dan sumber daya proyek desain.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700">
+                            <span class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">6</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">Menyusun alur sederhana proses desain dan bisnis berdasarkan kasus nyata.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 rounded-xl bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800/50 flex items-center gap-3 text-xs sm:text-sm text-blue-800 dark:text-blue-300">
+                        <i class="fa-solid fa-shield-halved text-lg text-blue-600 dark:text-blue-400"></i>
+                        <span><strong>Acuan Resmi:</strong> Capaian Pembelajaran Dasar-Dasar DKV Fase E (Kemdikbudristek) & Panduan Perancangan Desain Kementerian Komunikasi dan Digital (Komdigi RI).</span>
+                    </div>
+                </section>
+
+                <!-- BAB B: PROSES DESAIN VS BISNIS -->
+                <section id="materi-b" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            B
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Pengertian Proses Desain & Bisnis DKV</h2>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 space-y-3">
+                                <div class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-base">
+                                    <i class="fa-solid fa-compass-drafting"></i> 1. Proses Desain
+                                </div>
+                                <p>Rangkaian kegiatan sistematis untuk memecahkan masalah komunikasi visual menjadi solusi kreatif yang sesuai kebutuhan pengguna/audiens.</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 italic bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+                                    "Desain yang baik bukan sekadar yang indah visualnya, melainkan yang mampu menyampaikan pesan dan menyelesaikan masalah secara efektif."
+                                </p>
+                            </div>
+
+                            <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 space-y-3">
+                                <div class="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-base">
+                                    <i class="fa-solid fa-briefcase"></i> 2. Proses Bisnis DKV
+                                </div>
+                                <p>Rangkaian kegiatan komersialisasi dan pengelolaan sumber daya terencana untuk menghasilkan serta memberikan jasa/produk desain kepada klien.</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 italic bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+                                    "Mencakup negosiasi penawaran, perhitungan anggaran, penjadwalan, pengelolaan cetak, hingga penyerahan dan garansi kepuasan."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Comparative Table -->
+                        <div class="mt-8 overflow-x-auto">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-table-columns text-blue-600"></i> Matriks Perbedaan Proses Desain vs Proses Bisnis
+                            </h3>
+                            <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 dark:bg-slate-700/50 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700">
+                                        <th class="p-3 font-bold">Aspek</th>
+                                        <th class="p-3 font-bold text-blue-600 dark:text-blue-400">Proses Desain</th>
+                                        <th class="p-3 font-bold text-emerald-600 dark:text-emerald-400">Proses Bisnis DKV</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                    <tr>
+                                        <td class="p-3 font-semibold text-slate-900 dark:text-white">Fokus Utama</td>
+                                        <td class="p-3">Menemukan dan mengembangkan solusi visual</td>
+                                        <td class="p-3">Mengelola kegiatan usaha, transaksi, & operasional</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-semibold text-slate-900 dark:text-white">Pertanyaan Utama</td>
+                                        <td class="p-3">"Bagaimana menghasilkan desain yang efektif?"</td>
+                                        <td class="p-3">"Bagaimana proyek dikelola agar selesai sesuai kesepakatan?"</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-semibold text-slate-900 dark:text-white">Kegiatan Utama</td>
+                                        <td class="p-3">Riset, ideasi, sketsa, layout digital, evaluasi</td>
+                                        <td class="p-3">Penerimaan pesanan, kontrak, anggaran, jadwal, invoicing</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-semibold text-slate-900 dark:text-white">Hasil Akhir</td>
+                                        <td class="p-3">Rancangan karya/file karya komunikasi visual</td>
+                                        <td class="p-3">Layanan/produk terselesaikan & keuntungan bisnis</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB C: 9 TAHAP PROSES DESAIN -->
+                <section id="materi-c" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            C
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Mengenal 9 Tahapan Proses Desain</h2>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mb-8">
+                        Proses desain alur standar dalam industri kreatif DKV dapat dibagi menjadi 9 langkah sistematis:
+                    </p>
+
+                    <!-- Interactive Timeline / Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 01</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">1. Identifikasi Masalah</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Memahami akar permasalahan klien (misal: penurunan omset karena informasi menu tidak jelas, bukan sekadar butuh warna menarik).</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 02</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">2. Penyusunan Design Brief</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Menyusun panduan tertulis: Latar belakang, tujuan, target audiens, media, batasan teknis, dan deadline.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 03</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">3. Riset Audiens</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Mengumpulkan data lapangan, wawancara, kuesioner, dan riset visual kompetitor. Membedakan fakta dengan asumsi pribadi.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 04</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">4. Pengembangan Ide</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Brainstorming, mind mapping, dan pembuatan moodboard alternatif konsep visual (misal: fokus harga vs fokus kelezatan produk).</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 05</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">5. Sketsa & Prototipe</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Membuat rancangan kasar (wireframe, sketsa kertas, mockup kemasan) untuk menguji komposisi sebelum komputasi digital.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 06</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">6. Finalisasi Digital</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Eksekusi perangkat lunak (vektor, foto, tipografi, warna), penyelarasan hierarki informasi, dan pemeriksaan ejaan.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 07</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">7. Evaluasi & Revisi</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Pengujian visual bersama klien/sampel audiens. Melakukan revisi terarah sesuai batasan kesepakatan brief.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 08</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">8. Produksi & Penyerahan</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Persiapan cetak (CMYK,Bleed, high-res) atau pengoptimalan digital (RGB, kompresi web, rasio layar sosial media).</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 relative hover:border-blue-500 transition">
+                            <span class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1 block">TAHAP 09</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-2">9. Evaluasi Paskapublikasi</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Mengukur dampak desain di lapangan (efektivitas pesan, daya tarik konsumen, feedback pasar untuk perbaikan mendatang).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB D: INDUSTRI & SUMBER PROYEK -->
+                <section id="materi-d" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            D
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Jenis Usaha & Asal Proyek DKV</h2>
+                    </div>
+
+                    <div class="space-y-6 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        <p>
+                            Industri DKV merupakan bagian penting dari <strong>Subsektor Ekonomi Kreatif Indonesia</strong> (Kemenekraf / Bekraf RI). Berikut klasifikasi bidang usaha dan sumber datangnya proyek:
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl">
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-base flex items-center gap-2">
+                                    <i class="fa-solid fa-store text-blue-600"></i> Ragam Sub-Bidang Usaha DKV
+                                </h3>
+                                <ul class="space-y-2 text-xs sm:text-sm">
+                                    <li>• <strong>Studio Desain Grafis:</strong> Identitas visual, branding, logo, company profile.</li>
+                                    <li>• <strong>Agensi Periklanan (Advertising):</strong> Kampanye promosi, iklan TVC & digital.</li>
+                                    <li>• <strong>Percetakan & Packaging:</strong> Cetak spanduk, brosur, kemasan makanan.</li>
+                                    <li>• <strong>Studio Animasi & Motion Graphic:</strong> Asset animasi, video promosi 2D/3D.</li>
+                                    <li>• <strong>Jasa Fotografi & Videografi:</strong> Katalog produk, dokumentasi komersial.</li>
+                                    <li>• <strong>Jasa Konten Digital & UI/UX:</strong> Social media kit, website, aplikasi.</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-slate-200 dark:border-slate-700 p-4 rounded-xl">
+                                <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-base flex items-center gap-2">
+                                    <i class="fa-solid fa-diagram-project text-emerald-600"></i> Sumber Datangnya Proyek
+                                </h3>
+                                <ul class="space-y-2 text-xs sm:text-sm">
+                                    <li>• <strong>Pesanan Klien Eksternal:</strong> UMKM/Perusahaan memesan layanan desain.</li>
+                                    <li>• <strong>Kebutuhan Internal (In-House):</strong> Divisi promosi internal sekolah/perusahaan.</li>
+                                    <li>• <strong>Inisiatif Mandiri (Proaktif):</strong> Desainer menawarkan solusi katalog/brand ke UMKM sekitar.</li>
+                                    <li>• <strong>Proyek Kolaborasi:</strong> Kerja sama multi-disiplin bersama penulis, animator, & pemasar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB E: TAHAPAN BISNIS DKV -->
+                <section id="materi-e" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            E
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Alur Operasional Bisnis DKV</h2>
+                    </div>
+
+                    <div class="relative border-l-2 border-blue-500/30 dark:border-blue-500/20 ml-3 pl-6 space-y-6 text-sm">
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-800"></span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Tahap 1 & 2: Penerimaan & Analisis Penawaran</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Menerima briefing awal klien, menganalisis cakupan kerja (scope of work), menentukan jumlah sampel alternatif & revisi, lalu mengajukan proposal penawaran harga.</p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-800"></span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Tahap 3 & 4: Kesepakatan Kontrak & Perencanaan Proyek</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Penandatanganan kesepakatan/MOU (jadwal, pembayaran DP/Termin, batas revisi). Menyiapkan SDM, peralatan, timeline, dan alokasi modal.</p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-800"></span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Tahap 5 & 6: Pelaksanaan Desain & QC/Revisi</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Proses kreatif dilaksanakan. Klien meninjau rancangan draft. Revisi dilakukan dengan disiplin sesuai perjanjian batas revisi.</p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-800"></span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Tahap 7, 8 & 9: Produksi, Serah Terima & Invoicing</h3>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Persiapan cetak / ekspor file master. Pemeriksaan Quality Control (QC), penyerahan produk/aset, pelunasan pembayaran, serta garansi evaluasi purna jual.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB F: PERENCANAAN PROYEK & ANGGARAN -->
+                <section id="materi-f" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            F
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Perencanaan Proyek & Manajemen Risiko</h2>
+                    </div>
+
+                    <div class="space-y-6 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                        <p>
+                            Manajemen proyek DKV memastikan bahwa karya berkualitas diselesaikan tepat waktu dan menghasilkan margin keuntungan yang layak.
+                        </p>
+
+                        <!-- Rumus Dasar -->
+                        <div class="p-4 rounded-xl bg-slate-900 text-white space-y-3 font-mono text-xs sm:text-sm">
+                            <div class="text-blue-400 font-sans font-bold text-sm">Rumus Dasar Estimasi Biaya & Penawaran DKV:</div>
+                            <p>1. Total Biaya Proyek = Biaya Tenaga Kerja + Biaya Bahan/Produksi + Biaya Operasional + Tak Terduga</p>
+                            <p>2. Harga Penawaran (Quotation) = Total Biaya Proyek + Margin Keuntungan Terencana</p>
+                        </div>
+
+                        <!-- Table Risk Management -->
+                        <div class="overflow-x-auto">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-3 text-sm">Matriks Pengendalian Risiko Proyek DKV</h3>
+                            <table class="w-full text-xs text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white">
+                                        <th class="p-2.5 font-bold">Potensi Risiko</th>
+                                        <th class="p-2.5 font-bold">Dampak Negatif</th>
+                                        <th class="p-2.5 font-bold">Strategi Pencegahan / Antisipasi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                    <tr>
+                                        <td class="p-2.5 font-semibold text-rose-600 dark:text-rose-400">Brief Klien Tidak Jelas</td>
+                                        <td class="p-2.5">Desain salah arah & rombak total</td>
+                                        <td class="p-2.5">Wajibkan pengisian form design brief resmi sebelum pengerjaan.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold text-rose-600 dark:text-rose-400">Revisi Tanpa Batas (Scope Creep)</td>
+                                        <td class="p-2.5">Waktu membengkak, rugi tenaga</td>
+                                        <td class="p-2.5">Tentukan kuota revisi (misal max 3x) dalam klausul kesepakatan.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold text-rose-600 dark:text-rose-400">File Rusak / Data Hilang</td>
+                                        <td class="p-2.5">Pengerjaan diulang dari nol</td>
+                                        <td class="p-2.5">Lakukan auto-backup berkala ke Google Drive / Cloud Storage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 font-semibold text-rose-600 dark:text-rose-400">Pelanggaran Hak Cipta Asset</td>
+                                        <td class="p-2.5">Sanksi hukum & denda lisensi</td>
+                                        <td class="p-2.5">Gunakan gambar buatan sendiri atau berlisensi komersial (Creative Commons / Paid Stock).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB G: PIHAK & PERAN TIM INDUSTRI -->
+                <section id="materi-g" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            G
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Pihak & Tim Profesional DKV</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-user-tie"></i> Client / Klien
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Pemberi tugas yang menyediakan data produk, arahan tujuan, serta menyetujui hasil dan anggaran.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-palette"></i> Art Director
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Penanggung jawab arahan visual, konsep kreatif utama, dan pembimbing kualitas tim desainer.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-pen-nib"></i> Desainer Grafis
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Mengeksekusi ideasi menjadi tata letak visual, memadukan elemen tipografi, ilustrasi, dan warna.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-font"></i> Copywriter
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Menyusun teks, headline, slogan promosi, dan naskah pesan narasi dalam karya DKV.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-camera"></i> Fotografer / Ilustrator
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Menyediakan aset visual khusus berupa foto produk resolusi tinggi atau karya ilustrasi orisinal.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-blue-600 dark:text-blue-400 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check"></i> Project Manager
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Mengontrol tenggat waktu, komunikasi klien, alokasi biaya, dan kelancaran alur operasional.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB H: MODEL BISNIS DKV -->
+                <section id="materi-h" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            H
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Model Bisnis dalam Industri DKV</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">1. Project-Based Service</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Jasa kustom per pesanan (contoh: pembuatan logo, pembuatan brosur, desain kemasan khusus).</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">2. One-Stop Design & Print</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Layanan terpadu desain sekaligus produksi fisik cetak spanduk, kemasan, atau stiker.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">3. Model Retainer / Berlangganan</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Klien membayar kontrak bulanan rutin untuk kuota konten sosial media atau kebutuhan visual harian.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">4. Produk Digital Pasif</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Menjual template Canva, UI Kit, elemen 3D, atau ilustrasi stock di marketplace global.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">5. Desainer Lepas (Freelancer)</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Bekerja mandiri melayani klien perorangan/UMKM dengan fleksibilitas kerja mandiri.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200 dark:border-slate-700">
+                            <h3 class="font-bold text-slate-900 dark:text-white mb-1">6. Agensi / Studio Kreatif</h3>
+                            <p class="text-slate-600 dark:text-slate-300">Tim skala menengah/besar yang menangani strategi komunikasi merek secara komprehensif.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BAB I: ETIKA & PROFESIONALISME -->
+                <section id="materi-i" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            I
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Etika & Profesionalisme Desainer DKV</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa-solid fa-copyright text-blue-600"></i> Penghormatan Hak Cipta & Lisensi
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Dilarang plagiarisme, menjiplak logo merek lain, atau memakai font & foto bajakan tanpa lisensi komersial resmi.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa-solid fa-comments text-emerald-600"></i> Komunikasi Transparan
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Menjelaskan progress pengerjaan, bersikap terbuka jika ada kendala teknis, serta tidak mengumbar janji waktu yang tidak realistis.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa-solid fa-file-contract text-amber-600"></i> Kontrol Perubahan Pekerjaan
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Jika klien meminta fitur/file tambahan di luar kesepakatan brief, komunikasikan adendum biaya dan jadwal secara jujur.</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa-solid fa-lock text-purple-600"></i> Menjaga Kerahasiaan (NDA)
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300">Menjaga data bisnis rahasia produk klien yang belum diluncurkan secara publik ke media manapun.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION FITUR INTERAKTIF / TOOLS PRAKTIK -->
+                <div id="interactive-tools" class="pt-6 border-t border-slate-200 dark:border-slate-800">
+                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                        <i class="fa-solid fa-laptop-code text-blue-600"></i> Lembar Kerja & Tool Interaktif Praktik
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-8">Gunakan perangkat di bawah ini untuk mensimulasikan tugas perancangan DKV secara nyata.</p>
+                </div>
+
+                <!-- TOOL 1: GENERATOR DESIGN BRIEF INTERAKTIF -->
+                <section id="interactive-brief" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-md">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-lg">
+                                <i class="fa-solid fa-file-pen"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Design Brief Generator Interactive</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Susun dokumen panduan brief proyek sesuai standar Komdigi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Input Form Brief -->
+                        <div class="space-y-4 text-xs sm:text-sm">
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Pilih Template Kasus Proyek:</label>
+                                <select id="brief-template" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-emerald-500">
+                                    <option value="keripik">UMKM Keripik Pisang (Kantin/Lokal)</option>
+                                    <option value="penerimaan">Poster Penerimaan Siswa Baru (PPDB)</option>
+                                    <option value="custom">-- Kasus Mandiri / Custom --</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Latar Belakang Permasalahan:</label>
+                                <textarea id="brief-bg" rows="2" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200" placeholder="Jelaskan alasan proyek dibuat..."></textarea>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Tujuan Komunikasi:</label>
+                                    <input type="text" id="brief-goal" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200" placeholder="Misal: Meningkatkan pembeli">
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Target Audiens:</label>
+                                    <input type="text" id="brief-target" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200" placeholder="Misal: Siswa SMK & Remaja">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Media Output:</label>
+                                    <input type="text" id="brief-media" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200" placeholder="Misal: Poster A3 Cetak & IG Story">
+                                </div>
+                                <div>
+                                    <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Tenggat Waktu (Deadline):</label>
+                                    <input type="text" id="brief-deadline" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200" placeholder="Misal: 5 Hari Kerja">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preview Brief Document -->
+                        <div class="bg-slate-900 text-slate-100 p-5 rounded-xl flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+                                    <span class="text-xs font-mono uppercase text-emerald-400 font-bold"><i class="fa-solid fa-file-contract"></i> Dokumen Design Brief</span>
+                                    <span class="text-xs text-slate-500">Status: Draft Perancangan</span>
+                                </div>
+                                <div id="brief-output" class="text-xs font-mono space-y-2 text-slate-300 leading-relaxed">
+                                    <!-- Dynamic text via Javascript -->
+                                </div>
+                            </div>
+                            <button id="copy-brief-btn" class="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-lg text-xs transition flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-copy"></i> Salin Dokumen Brief
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TOOL 2: KALKULATOR HARGA PROYEK & ANGGARAN -->
+                <section id="interactive-calc" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-lg">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Kalkulator Estimasi Anggaran & Penawaran Proyek</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Simulasikan perhitungan Total Biaya & Harga Penawaran Resmi</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4 text-xs sm:text-sm">
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Biaya Jasa Tenaga Kerja Desain (Rp):</label>
+                                <input type="number" id="calc-labor" value="100000" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+                            </div>
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Biaya Bahan / Cetak / Asset (Rp):</label>
+                                <input type="number" id="calc-materials" value="80000" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+                            </div>
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Biaya Operasional (Listrik, Internet, Transport) (Rp):</label>
+                                <input type="number" id="calc-ops" value="20000" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+                            </div>
+                            <div>
+                                <label class="block font-medium text-slate-700 dark:text-slate-300 mb-1">Target Margin Keuntungan Usaha (Rp):</label>
+                                <input type="number" id="calc-profit" value="50000" class="w-full p-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+                            </div>
+                        </div>
+
+                        <!-- Result Display Box -->
+                        <div class="bg-slate-100 dark:bg-slate-900/80 p-5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <h4 class="font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2 text-sm">Rincian Anggaran Proyek</h4>
+                                
+                                <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400">
+                                    <span>Total Modal Biaya Pokok:</span>
+                                    <span id="calc-subtotal-out" class="font-bold font-mono text-slate-900 dark:text-white">Rp 200.000</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400">
+                                    <span>Margin Keuntungan Usaha:</span>
+                                    <span id="calc-profit-out" class="font-bold font-mono text-emerald-600 dark:text-emerald-400">Rp 50.000</span>
+                                </div>
+
+                                <div class="pt-3 border-t border-slate-200 dark:border-slate-700">
+                                    <span class="text-xs font-semibold text-slate-500 uppercase block mb-1">Rekomendasi Harga Penawaran Klien:</span>
+                                    <span id="calc-total-out" class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 font-mono">Rp 250.000</span>
+                                </div>
+                            </div>
+
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-4 italic">
+                                *Catatan Pembelajaran: Pada industri riil, penentuan harga juga dipengaruhi oleh kompleksitas lisensi, skala perusahaan klien, dan urgensi deadline.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TOOL 3: KUIS & QUIZ PEMAHAMAN INTERAKTIF -->
+                <section id="interactive-quiz" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-md">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-lg">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Kuis Interaktif Pemahaman Konsep DKV</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Uji pemahaman materi proses desain dan bisnis</p>
+                        </div>
+                    </div>
+
+                    <div id="quiz-container" class="space-y-6">
+                        <!-- Question 1 -->
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-3">
+                            <p class="font-semibold text-sm text-slate-900 dark:text-white">1. Apa langkah pertama yang harus dilakukan seorang desainer profesional sebelum membuka software grafis?</p>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q1" value="a" class="quiz-option"> a. Memilih kombinasi warna terpopuler
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q1" value="b" class="quiz-option"> b. Memahami masalah, sasaran audiens, dan tujuan komunikasi klien
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q1" value="c" class="quiz-option"> c. Langsung mendownload font yang unik
+                                </label>
+                            </div>
+                            <div id="q1-feedback" class="hidden text-xs p-2.5 rounded-lg font-medium"></div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-3">
+                            <p class="font-semibold text-sm text-slate-900 dark:text-white">2. Dokumen ringkas yang menjadi pedoman utama antara desainer dan klien agar memiliki pemahaman proyek yang sama disebut...</p>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q2" value="a" class="quiz-option"> a. Design Brief
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q2" value="b" class="quiz-option"> b. Invoice Pembayaran
+                                </label>
+                                <label class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer">
+                                    <input type="radio" name="q2" value="c" class="quiz-option"> c. Curated Portfolio
+                                </label>
+                            </div>
+                            <div id="q2-feedback" class="hidden text-xs p-2.5 rounded-lg font-medium"></div>
+                        </div>
+
+                        <button id="submit-quiz" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg text-xs transition">
+                            Periksa Jawaban Kuis
+                        </button>
+                    </div>
+                </section>
+
+                <!-- BAB J: STUDI KASUS TERPADU (UMKM KERIPIK PISANG) -->
+                <section id="materi-j" class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700/60 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-lg">
+                            J
+                        </div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Studi Kasus Terpadu: Pesanan Desain UMKM</h2>
+                    </div>
+
+                    <!-- Narrative Case -->
+                    <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-200 dark:border-slate-700 space-y-3 mb-6 text-xs sm:text-sm leading-relaxed">
+                        <span class="px-2.5 py-1 bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300 font-bold rounded text-xs inline-block">Skenario Nyata</span>
+                        <p class="text-slate-800 dark:text-slate-200">
+                            <strong>Kasus:</strong> Sebuah usaha Keripik Pisang lokal warga sekitar sekolah menghadapi kendala: Produk kurang dikenal luas dan kemasan plastik polos terlihat kurang menarik minat konsumen. Pemilik UMKM ingin memesan desain label kemasan baru serta poster promosi digital untuk media sosial. Pemilik memiliki anggaran terbatas dan meminta pekerjaan selesai dalam kurun 5 hari kerja.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Accordion Case Questions -->
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm sm:text-base">Pertanyaan Diskusi Kasus & Kunci Refleksi:</h3>
+                    
+                    <div class="space-y-3" id="case-study-accordion">
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button class="accordion-header w-full p-4 text-left font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 flex justify-between items-center">
+                                <span>1. Apa masalah utama yang ingin diselesaikan pemilik UMKM?</span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden p-4 text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+                                Rendahnya daya tarik visual kemasan produk dan minimnya kesadaran merek (brand awareness) di kalangan konsumen potensial.
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button class="accordion-header w-full p-4 text-left font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 flex justify-between items-center">
+                                <span>2. Mengapa studio perlu menyepakati ruang lingkup sebelum mendesain?</span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden p-4 text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+                                Untuk mencegah kesalahpahaman (misal: klien mengira harga desain label sudah mencakup biaya cetak ribuan lembar atau foto produk profesional gratis).
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button class="accordion-header w-full p-4 text-left font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 flex justify-between items-center">
+                                <span>3. Apa indikator utama keberhasilan proyek ini?</span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden p-4 text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+                                Informasi label terbaca jelas, tampilan visual meningkatkan daya tarik pembelian konsumen, proyek selesai tepat 5 hari tanpa membengkakkan anggaran.
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm sm:text-base">Password LKPD</h3>
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+                            <button class="accordion-header w-full p-4 text-left font-semibold text-xs sm:text-sm text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-700/40 hover:bg-slate-100 dark:hover:bg-slate-700 flex justify-between items-center">
+                                <span>Klik untuk melihat password LKPD -></span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden p-4 text-sm text-slate-900 dark:text-slate-300 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+                                password = LKPDPDB1DKV*
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer Summary -->
+                <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400 space-y-2">
+                    <p>Materi Pembelajaran Dasar-Dasar Desain Komunikasi Visual (DKV) - Fase E Kelas X SMK</p>
+                    <p>Mengacu pada Kurikulum Kemdikbudristek RI & Panduan Perancangan Komdigi RI</p>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Notification Toast Message Container -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-msg">Pesan notifikasi</span>
+    </div>
+
+    <!-- JavaScript Interactions Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Dark / Light Theme Switcher
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                showToast("Tampilan tema berhasil diubah");
+            });
+
+            // 2. Reading Progress Bar Indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('progress-bar').style.width = scrolled + '%';
+            });
+
+            // 3. Mobile Sidebar Toggle
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebarClose = document.getElementById('sidebar-close');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+            function openSidebar() {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+            }
+
+            function closeSidebar() {
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.add('hidden');
+            }
+
+            sidebarToggle?.addEventListener('click', openSidebar);
+            sidebarClose?.addEventListener('click', closeSidebar);
+            sidebarOverlay?.addEventListener('click', closeSidebar);
+
+            // Close mobile menu on clicking nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 1024) closeSidebar();
+                });
+            });
+
+            // 4. Interactive Design Brief Generator Logic
+            const briefTemplateSelect = document.getElementById('brief-template');
+            const briefBgInput = document.getElementById('brief-bg');
+            const briefGoalInput = document.getElementById('brief-goal');
+            const briefTargetInput = document.getElementById('brief-target');
+            const briefMediaInput = document.getElementById('brief-media');
+            const briefDeadlineInput = document.getElementById('brief-deadline');
+            const briefOutputContainer = document.getElementById('brief-output');
+
+            const templates = {
+                keripik: {
+                    bg: "Kemasan plastik keripik pisang UMKM lokal kurang menarik dan belum memiliki branding visual yang jelas.",
+                    goal: "Meningkatkan daya tarik visual produk dan meningkatkan penjualan lokal.",
+                    target: "Remaja, siswa sekolah, dan pembeli oleh-oleh lokal.",
+                    media: "Stiker Label Kemasan & Poster Promosi Sosial Media",
+                    deadline: "5 Hari Kerja"
+                },
+                penerimaan: {
+                    bg: "Informasi pendaftaran siswa baru sekolah belum tersampaikan dengan jelas kepada calon wali murid.",
+                    goal: "Menyampaikan jadwal, syarat, dan keunggulan sekolah secara informatif.",
+                    target: "Orang tua / Wali murid dan lulusan SMP.",
+                    media: "Brosur Cetak Lipat 3 & Banner Digital Website",
+                    deadline: "3 Hari Kerja"
+                },
+                custom: {
+                    bg: "", goal: "", target: "", media: "", deadline: ""
+                }
+            };
+
+            function updateBriefPreview() {
+                const bg = briefBgInput.value || "[Belum diisi]";
+                const goal = briefGoalInput.value || "[Belum diisi]";
+                const target = briefTargetInput.value || "[Belum diisi]";
+                const media = briefMediaInput.value || "[Belum diisi]";
+                const deadline = briefDeadlineInput.value || "[Belum diisi]";
+
+                briefOutputContainer.innerHTML = `
+                    <p><strong>PROYEK:</strong> ${briefTemplateSelect.options[briefTemplateSelect.selectedIndex].text}</p>
+                    <p><strong>1. LATAR BELAKANG:</strong> ${bg}</p>
+                    <p><strong>2. TUJUAN:</strong> ${goal}</p>
+                    <p><strong>3. TARGET AUDIENS:</strong> ${target}</p>
+                    <p><strong>4. MEDIA OUTPUT:</strong> ${media}</p>
+                    <p><strong>5. TENGGAT WAKTU:</strong> ${deadline}</p>
+                `;
+            }
+
+            briefTemplateSelect.addEventListener('change', (e) => {
+                const selected = templates[e.target.value];
+                if (selected) {
+                    briefBgInput.value = selected.bg;
+                    briefGoalInput.value = selected.goal;
+                    briefTargetInput.value = selected.target;
+                    briefMediaInput.value = selected.media;
+                    briefDeadlineInput.value = selected.deadline;
+                    updateBriefPreview();
+                }
+            });
+
+            [briefBgInput, briefGoalInput, briefTargetInput, briefMediaInput, briefDeadlineInput].forEach(input => {
+                input.addEventListener('input', updateBriefPreview);
+            });
+
+            // Initialize default preview
+            briefTemplateSelect.dispatchEvent(new Event('change'));
+
+            // Copy Brief Button Action
+            document.getElementById('copy-brief-btn').addEventListener('click', () => {
+                const textToCopy = briefOutputContainer.innerText;
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = textToCopy;
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempTextArea);
+                showToast("Dokumen Brief berhasil disalin ke clipboard!");
+            });
+
+            // 5. Interactive Project Budget Calculator Logic
+            const calcLabor = document.getElementById('calc-labor');
+            const calcMaterials = document.getElementById('calc-materials');
+            const calcOps = document.getElementById('calc-ops');
+            const calcProfit = document.getElementById('calc-profit');
+
+            function calculateBudget() {
+                const labor = parseFloat(calcLabor.value) || 0;
+                const materials = parseFloat(calcMaterials.value) || 0;
+                const ops = parseFloat(calcOps.value) || 0;
+                const profit = parseFloat(calcProfit.value) || 0;
+
+                const subtotal = labor + materials + ops;
+                const totalQuotation = subtotal + profit;
+
+                document.getElementById('calc-subtotal-out').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
+                document.getElementById('calc-profit-out').innerText = 'Rp ' + profit.toLocaleString('id-ID');
+                document.getElementById('calc-total-out').innerText = 'Rp ' + totalQuotation.toLocaleString('id-ID');
+            }
+
+            [calcLabor, calcMaterials, calcOps, calcProfit].forEach(input => {
+                input.addEventListener('input', calculateBudget);
+            });
+
+            // 6. Interactive Quiz Checking Logic
+            document.getElementById('submit-quiz').addEventListener('click', () => {
+                // Q1 Checking
+                const q1Val = document.querySelector('input[name="q1"]:checked')?.value;
+                const q1Fb = document.getElementById('q1-feedback');
+                q1Fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+                if (q1Val === 'b') {
+                    q1Fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                    q1Fb.innerText = "Benar! Desainer harus memahami kebutuhan masalah & audiens terlebih dahulu.";
+                } else {
+                    q1Fb.classList.add('bg-rose-100', 'text-rose-800');
+                    q1Fb.innerText = "Kurang tepat. Jawaban benar adalah (b).";
+                }
+
+                // Q2 Checking
+                const q2Val = document.querySelector('input[name="q2"]:checked')?.value;
+                const q2Fb = document.getElementById('q2-feedback');
+                q2Fb.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'bg-rose-100', 'text-rose-800');
+                if (q2Val === 'a') {
+                    q2Fb.classList.add('bg-emerald-100', 'text-emerald-800');
+                    q2Fb.innerText = "Benar! Design Brief adalah dokumen panduan acuan proyek.";
+                } else {
+                    q2Fb.classList.add('bg-rose-100', 'text-rose-800');
+                    q2Fb.innerText = "Kurang tepat. Jawaban benar adalah (a) Design Brief.";
+                }
+            });
+
+            // 7. Case Study Accordion Toggle
+            document.querySelectorAll('.accordion-header').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('i');
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Utility Toast Function
+            function showToast(msg) {
+                const toast = document.getElementById('toast');
+                document.getElementById('toast-msg').innerText = msg;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+
+        });
+    </script>
+</body>
+</html>
