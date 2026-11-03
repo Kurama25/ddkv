@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolusi Teknologi DKV - Media Pembelajaran Interaktif</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        p1: '#e11d48', // Konvensional (Red/Rose)
+                        p2: '#d97706', // Komputerisasi (Amber)
+                        p3: '#059669', // Internet/Digital (Emerald)
+                        p4: '#7c3aed', // AI & Cerdas (Violet)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(180deg, #e11d48 0%, #d97706 33%, #059669 66%, #7c3aed 100%);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 28px;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
+                    <i class="fa-solid fa-palette text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-lg text-slate-900 dark:text-white leading-none block">EduDKV</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">Media Pembelajaran Interaktif</span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#pengantar" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Pengantar</a>
+                <a href="#timeline" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Garis Waktu (Timeline)</a>
+                <a href="#perbandingan" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Perbandingan</a>
+                <a href="#refleksi" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Pesan Utama</a>
+                <a href="#kuis" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Kuis Interaktif</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button id="themeToggle" class="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="pengantar" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300 border border-brand-200 dark:border-brand-800 mb-6">
+                    <i class="fa-solid fa-layer-group"></i> Modul Pembelajaran DKV
+                </span>
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
+                    Perkembangan Teknologi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-purple-600 to-p1">Desain Komunikasi Visual</span>
+                </h1>
+                <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+                    Menelusuri transformasi dunia DKV dari meja cetak manual, era revolusi komputer DTP, ledakan internet berbasis digital cloud, hingga integrasi kecerdasan buatan (AI) masa kini.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#timeline" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium shadow-lg shadow-brand-500/25 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-play"></i> Mulai Jelajahi Periode
+                    </a>
+                    <a href="#kuis" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-750 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check"></i> Uji Pemahaman
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaway Banner / Highlight Pesan Guru -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="bg-gradient-to-r from-amber-500/10 via-brand-500/10 to-purple-500/10 border-l-4 border-brand-500 rounded-r-2xl p-6 sm:p-8 backdrop-blur-sm shadow-sm">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                <div class="p-3 bg-brand-500 text-white rounded-xl shadow-md shrink-0">
+                    <i class="fa-solid fa-lightbulb text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Catatan Penting Pembelajaran:</h3>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-1">
+                        Teknologi dalam DKV <strong>tidak muncul sekaligus</strong> dan tidak semua industri menggunakan teknologi yang sama secara serentak. Perkembangan tersebut berlangsung secara <strong>bertahap, berkelanjutan, dan saling melengkapi</strong> hingga saat ini.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-16">
+            <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">4 Periode Utama Perkembangan DKV</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2">Klik atau gulir untuk mempelajari karakteristik tiap zaman</p>
+        </div>
+
+        <div class="relative timeline-line space-y-16">
+
+            <!-- PERIODE 1: ERA KONVENSIONAL -->
+            <div class="relative flex flex-col md:flex-row items-center group">
+                <!-- Dot Marker -->
+                <div class="absolute left-7 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-p1 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 border-4 border-white dark:border-slate-900">
+                    1
+                </div>
+
+                <!-- Card Content Left/Right -->
+                <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 md:text-right mb-6 md:mb-0">
+                    <span class="inline-block px-3 py-1 bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300 font-semibold text-xs rounded-md mb-2">Awal Perkembangan</span>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Periode 1: Era Konvensional</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Proses Kreatif Manual & Fisik</p>
+
+                    <!-- Horizontal Scrollable Image Gallery -->
+                    <div class="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-thin snap-x snap-mandatory justify-start">
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-1.jpeg" alt="gambar 1" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-2.jpeg" alt="gambar 2" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-3.jpeg" alt="gambar 3" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-4.jpeg" alt="gambar 4" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-5.jpeg" alt="gambar 5" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p1-6.jpeg" alt="gambar 6" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 pl-16 md:pl-12">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700/60 hover:shadow-xl transition">
+                        <!-- Visual Card Header/Illustration -->
+                        <div class="h-44 rounded-xl bg-gradient-to-br from-rose-50 to-orange-50 dark:from-slate-700 dark:to-rose-950/30 flex items-center justify-center mb-6 relative overflow-hidden border border-rose-100 dark:border-slate-700">
+                            <!-- Visual Elements: Pensil, Film, Dunkelkammer Dunkel/Darkroom -->
+                            <div class="flex items-center gap-6 text-rose-600 dark:text-rose-400">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-pen-ruler text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Manual Design</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-camera-retro text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Analog Film</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-box-archive text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Kamar Gelap</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-p1"></i> Ciri-ciri Utama:
+                        </h4>
+                        <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-rose-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Desain dibuat secara manual menggunakan ketelitian tangan.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-rose-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Menggunakan media fisik: pensil, penggaris, cat, tinta, cutter, dan kertas kalkir/duplex.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-rose-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Huruf (tipografi) dan gambar disusun secara manual (Manual typesetting / Paste-up).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-rose-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Fotografi menggunakan film analog yang dicuci pada <em>Dunkelkammer</em> (Kamar Gelap/Fotolabor).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-rose-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Pencetakan menggunakan teknik cetak konvensional (Sablon, Offset, Letterpress).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERIODE 2: ERA KOMPUTERISASI -->
+            <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                <!-- Dot Marker -->
+                <div class="absolute left-7 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-p2 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 border-4 border-white dark:border-slate-900">
+                    2
+                </div>
+
+                <!-- Card Content Right/Left -->
+                <div class="w-full md:w-1/2 pl-16 md:pl-12 md:text-left mb-6 md:mb-0">
+                    <span class="inline-block px-3 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 font-semibold text-xs rounded-md mb-2">Revolusi DTP (~1980-an)</span>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Periode 2: Era Komputerisasi</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Desktop Publishing (DTP) & Prepress Digital</p>
+
+                    <!-- Horizontal Scrollable Image Gallery -->
+                    <div class="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-thin snap-x snap-mandatory justify-start">
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-1.jpeg" alt="gambar 1" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-2.jpeg" alt="gambar 2" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-3.jpeg" alt="gambar 3" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-4.jpeg" alt="gambar 4" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-5.jpeg" alt="gambar 5" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p2-6.jpeg" alt="gambar 6" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700/60 hover:shadow-xl transition">
+                        <!-- Visual Card Header -->
+                        <div class="h-44 rounded-xl bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-slate-700 dark:to-amber-950/30 flex items-center justify-center mb-6 relative overflow-hidden border border-amber-100 dark:border-slate-700">
+                            <div class="flex items-center gap-6 text-amber-600 dark:text-amber-400">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-desktop text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Awal DTP System</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-floppy-disk text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Digital Storage</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-print text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Prepress Modern</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-p2"></i> Ciri-ciri Utama:
+                        </h4>
+                        <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amber-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Komputer perangkat keras & lunak (seperti DTP-7000) mulai digunakan untuk membuat desain.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amber-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Pengolahan gambar, olah tata letak (layout), dan ilustrasi dilakukan secara digital.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amber-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Desain jauh lebih mudah diedit, direvisi, dan disimpan dalam format berkas.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amber-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Proses produksi dan alur kerja (workflow) menjadi jauh lebih cepat dan efisien.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-amber-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Industri percetakan (Prepress & Grafika) mengadopsi sistem digital terpadu.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERIODE 3: ERA INTERNET & DIGITAL -->
+            <div class="relative flex flex-col md:flex-row items-center group">
+                <!-- Dot Marker -->
+                <div class="absolute left-7 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-p3 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 border-4 border-white dark:border-slate-900">
+                    3
+                </div>
+
+                <!-- Card Content Left/Right -->
+                <div class="w-full md:w-1/2 pl-16 md:pl-0 md:pr-12 md:text-right mb-6 md:mb-0">
+                    <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 font-semibold text-xs rounded-md mb-2">Konektivitas & Web UI/UX</span>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Periode 3: Era Internet & Digital</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Cloud, Pen Tablet, Media Sosial & Tren UI</p>
+
+                    <!-- Horizontal Scrollable Image Gallery -->
+                    <div class="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-thin snap-x snap-mandatory justify-start">
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-1.jpeg" alt="gambar 1" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-2.jpeg" alt="gambar 2" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-3.jpeg" alt="gambar 3" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-4.jpeg" alt="gambar 4" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-5.jpeg" alt="gambar 5" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p3-6.jpeg" alt="gambar 6" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 pl-16 md:pl-12">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700/60 hover:shadow-xl transition">
+                        <!-- Visual Card Header -->
+                        <div class="h-44 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-slate-700 dark:to-emerald-950/30 flex items-center justify-center mb-6 relative overflow-hidden border border-emerald-100 dark:border-slate-700">
+                            <div class="flex items-center gap-6 text-emerald-600 dark:text-emerald-400">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-laptop-code text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Pen Tablet & Laptop</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-cloud-arrow-up text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Cloud Collaboration</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-layer-group text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">UI/UX (Claymorphism)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-p3"></i> Ciri-ciri Utama:
+                        </h4>
+                        <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Desain dikerjakan dan bagikan secara daring melalui jaringan internet.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Muncul media sosial & platform digital sebagai sarana utama promosi visual.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Kolaborasi kerja dapat dilakukan secara real-time dari lokasi berbeda (Remote work).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Penggunaan perangkat modern (laptop, pen tablet) dan aplikasi berbasis cloud (Figma, Canva).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Timbul tren desain UI/UX baru (seperti Claymorphism, Flat Design, Micro-interaction).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PERIODE 4: ERA AI DAN TEKNOLOGI CERDAS -->
+            <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                <!-- Dot Marker -->
+                <div class="absolute left-7 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-p4 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 border-4 border-white dark:border-slate-900">
+                    4
+                </div>
+
+                <!-- Card Content Right/Left -->
+                <div class="w-full md:w-1/2 pl-16 md:pl-12 md:text-left mb-6 md:mb-0">
+                    <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300 font-semibold text-xs rounded-md mb-2">Masa Kini & Masa Depan</span>
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Periode 4: Era AI & Teknologi Cerdas</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Generative AI, 3D Animation, AR/VR & Data Analysis</p>
+
+                    <!-- Horizontal Scrollable Image Gallery -->
+                    <div class="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-thin snap-x snap-mandatory justify-start">
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-1.jpeg" alt="gambar 1" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-2.jpeg" alt="gambar 2" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-3.jpeg" alt="gambar 3" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-4.jpeg" alt="gambar 4" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-5.jpeg" alt="gambar 5" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="snap-start shrink-0 w-[calc(50%-6px)] md:w-[calc(33.333%-8px)] h-28 sm:h-32 rounded-xl overflow-hidden border border-rose-200 dark:border-rose-900/50 shadow-sm">
+                            <img src="gambar/p4-6.jpeg" alt="gambar 6" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700/60 hover:shadow-xl transition">
+                        <!-- Visual Card Header -->
+                        <div class="h-44 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-slate-700 dark:to-purple-950/30 flex items-center justify-center mb-6 relative overflow-hidden border border-purple-100 dark:border-slate-700">
+                            <div class="flex items-center gap-6 text-purple-600 dark:text-purple-400">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">Generative AI</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-cube text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">3D Video Render</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-vr-cardboard text-4xl mb-1"></i>
+                                    <span class="block text-[10px] font-semibold">AR / VR Space</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-p4"></i> Ciri-ciri Utama:
+                        </h4>
+                        <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-purple-500 mt-1 shrink-0 text-xs"></i>
+                                <span>AI (Kecerdasan Buatan) membantu menghasilkan gambar, konsep visual, dan ragam prompt secara instan.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-purple-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Otomatisasi mempermudah pekerjaan berulang (seperti hapus latar, masking, resize otomatis).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-purple-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Teknologi 3D interaktif dan video animasi digunakan luas untuk visualisasi produk modern.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-purple-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Augmented Reality (AR) dan Virtual Reality (VR) membuka pengalaman visual immersive baru.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-purple-500 mt-1 shrink-0 text-xs"></i>
+                                <span>Analisis data perilaku pengguna membantu mengarahkan strategi desain & pemasaran secara terukur.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Matrix / Comparison Table -->
+    <section id="perbandingan" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-slate-100/60 dark:bg-slate-800/40 rounded-3xl my-12 border border-slate-200/80 dark:border-slate-700/50">
+        <div class="text-center mb-10">
+            <h2 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">Matriks Matriks Perbandingan Teknologi</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2">Ringkasan cepat evolusi elemen desain DKV dari waktu ke waktu</p>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-600 dark:text-slate-300">
+                <thead class="bg-slate-200/70 dark:bg-slate-700/60 text-slate-900 dark:text-white uppercase text-xs font-semibold">
+                    <tr>
+                        <th class="py-4 px-6 rounded-tl-xl">Elemen DKV</th>
+                        <th class="py-4 px-6 border-l border-slate-300 dark:border-slate-600">Era Konvensional</th>
+                        <th class="py-4 px-6 border-l border-slate-300 dark:border-slate-600">Era Komputerisasi</th>
+                        <th class="py-4 px-6 border-l border-slate-300 dark:border-slate-600">Era Internet & Digital</th>
+                        <th class="py-4 px-6 rounded-tr-xl border-l border-slate-300 dark:border-slate-600">Era AI & Cerdas</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700 bg-white dark:bg-slate-800/80">
+                    <tr>
+                        <td class="py-4 px-6 font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-toolbox text-brand-500"></i> Alat Utama
+                        </td>
+                        <td class="py-4 px-6">Pensil, Tinta, Kuas, Cutter</td>
+                        <td class="py-4 px-6">Komputer DTP, Scanner, Disk</td>
+                        <td class="py-4 px-6">Laptop, Pen Tablet, Smartphone</td>
+                        <td class="py-4 px-6">Generative AI, AR/VR Headset</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-camera text-brand-500"></i> Fotografi
+                        </td>
+                        <td class="py-4 px-6">Film Analog & Kamar Gelap</td>
+                        <td class="py-4 px-6">Kamera Digital Awal, Stock Photo</td>
+                        <td class="py-4 px-6">DSLR/Mirrorless & Cloud Sync</td>
+                        <td class="py-4 px-6">AI Image Generator (Midjourney, DALL-E)</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-font text-brand-500"></i> Tipografi
+                        </td>
+                        <td class="py-4 px-6">Susun Huruf Manual (Letraset)</td>
+                        <td class="py-4 px-6">Digital Fonts (TrueType/PostScript)</td>
+                        <td class="py-4 px-6">Web Fonts (Google Fonts, Adobe)</td>
+                        <td class="py-4 px-6">Variable & Dynamic AI Font Pairing</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-users text-brand-500"></i> Kolaborasi
+                        </td>
+                        <td class="py-4 px-6">Tatap Muka & Pengiriman Fisik</td>
+                        <td class="py-4 px-6">Transfer Berkas CD / Disket</td>
+                        <td class="py-4 px-6">Cloud Realtime (Figma, Drive)</td>
+                        <td class="py-4 px-6">AI Copilot & Multi-agent Systems</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Key Educator Message Section -->
+    <section id="refleksi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div class="relative z-10 max-w-3xl">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-400 mb-2 block">Pemahaman Konseptual</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold mb-6">Prinsip Berkelanjutan dalam DKV</h2>
+                <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                    <p>
+                        Sebagai siswa DKV, penting untuk dipahami bahwa <strong>teknologi baru tidak serta merta memusnahkan teknologi lama secara total</strong>.
+                    </p>
+                    <p>
+                        Hingga hari ini, banyak desainer yang masih memulai sketsa awal menggunakan <em>pensil dan kertas</em> (Era Konvensional) untuk eksplorasi ide bebas, sebelum memindahkannya ke <em>komputer</em>, mengunggahnya ke <em>cloud</em>, dan memanfaatkan <em>AI</em> untuk optimalisasi.
+                    </p>
+                    <div class="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-white font-medium flex items-center gap-3">
+                        <i class="fa-solid fa-arrows-rotate text-yellow-400 text-xl"></i>
+                        <span>Setiap era saling melengkapi (komplementer) sesuai dengan kebutuhan industri dan karakteristik karya visual yang ingin diciptakan.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative Icon -->
+            <i class="fa-solid fa-shapes absolute -right-10 -bottom-10 text-[240px] opacity-10 text-white pointer-events-none"></i>
+        </div>
+    </section>
+
+    <!-- Interactive Quiz Section -->
+    <section id="kuis" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 dark:border-slate-700">
+            <div class="text-center mb-8">
+                <span class="inline-block p-3 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-2xl mb-3">
+                    <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                </span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Uji Pemahaman Siswa</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Jawab pertanyaan berikut untuk menguji pemahaman materi</p>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quizContainer">
+                <div class="mb-6">
+                    <div class="flex justify-between text-xs font-semibold text-slate-500 mb-2">
+                        <span id="questionCounter">Pertanyaan 1 dari 4</span>
+                        <span id="scoreCounter">Skor: 0</span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                        <div id="progressBar" class="bg-brand-600 h-full w-1/4 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <div id="quizCard" class="space-y-6">
+                    <h3 id="questionText" class="text-lg font-semibold text-slate-900 dark:text-white">
+                        <!-- Question Text Inserted via JS -->
+                    </h3>
+
+                    <div id="optionsContainer" class="space-y-3">
+                        <!-- Options Inserted via JS -->
+                    </div>
+
+                    <div id="feedbackBox" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                    <div class="flex justify-end pt-4">
+                        <button id="nextBtn" class="hidden px-6 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-xl transition">
+                            Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Result Screen (Hidden by Default) -->
+                <div id="resultScreen" class="hidden text-center py-8">
+                    <i class="fa-solid fa-trophy text-5xl text-yellow-500 mb-4 animate-bounce"></i>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Selesai!</h3>
+                    <p id="finalScoreText" class="text-lg text-slate-600 dark:text-slate-300 mb-6"></p>
+                    <button onclick="restartQuiz()" class="px-6 py-3 bg-brand-600 text-white font-medium rounded-xl hover:bg-brand-700 transition">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Ulangi Kuis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500 dark:text-slate-400">
+            <p>© Media Pembelajaran DKV - Perkembangan Teknologi Visual.</p>
+            <p class="mt-1 text-xs text-slate-400">Dirancang untuk kebutuhan pembelajaran interaktif di kelas DKV.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Quiz Data
+        const quizData = [
+            {
+                question: "Pencucian foto menggunakan film analog di kamar gelap (Dunkelkammer) merupakan ciri khas utama dari era...",
+                options: [
+                    "Era AI dan Teknologi Cerdas",
+                    "Era Internet dan Digital",
+                    "Era Konvensional",
+                    "Era Komputerisasi"
+                ],
+                correct: 2,
+                explanation: "Fotografi film analog dan pembuatan visual secara manual menggunakan media fisik merupakan karakteristik utama dari Era Konvensional."
+            },
+            {
+                question: "Istilah Desktop Publishing (DTP) mulai populer dan mengubah efisiensi sistem prepress percetakan pada periode...",
+                options: [
+                    "Era Konvensional",
+                    "Era Komputerisasi",
+                    "Era AI",
+                    "Era Virtual Reality"
+                ],
+                correct: 1,
+                explanation: "Era komputerisasi ditandai dengan digunakannya komputer (DTP) untuk pengolahan gambar dan tata letak secara digital."
+            },
+            {
+                question: "Manakah di bawah ini yang MERUPAKAN ciri khas DKV pada Era Internet dan Digital?",
+                options: [
+                    "Desain disusun menggunakan huruf timah secara manual",
+                    "Kolaborasi kerja dilakukan secara daring dan berbasis cloud",
+                    "Menggunakan prompt teks untuk menghasilkan visual instan",
+                    "Foto wajib dicuci menggunakan cairan kimia di kamar gelap"
+                ],
+                correct: 1,
+                explanation: "Era Internet dan Digital memungkinkan desain dikerjakan & dibagikan secara daring serta kolaborasi dari lokasi berbeda melalui perangkat cloud."
+            },
+            {
+                question: "Pernyataan yang paling tepat mengenai perkembangan teknologi DKV adalah...",
+                options: [
+                    "Teknologi baru langsung menggantikan teknologi lama secara total dalam satu hari",
+                    "Semua industri desain di dunia selalu memakai teknologi yang persis sama secara serentak",
+                    "Teknologi berkembang secara bertahap dan saling melengkapi sesuai kebutuhan",
+                    "Teknologi manual sudah tidak berguna lagi di era modern"
+                ],
+                correct: 2,
+                explanation: "Perkembangan teknologi DKV berlangsung bertahap, tidak muncul sekaligus, dan teknologi baru saling melengkapi teknologi terdahulu."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        const questionCounterEl = document.getElementById('questionCounter');
+        const scoreCounterEl = document.getElementById('scoreCounter');
+        const progressBarEl = document.getElementById('progressBar');
+        const questionTextEl = document.getElementById('questionText');
+        const optionsContainerEl = document.getElementById('optionsContainer');
+        const feedbackBoxEl = document.getElementById('feedbackBox');
+        const nextBtn = document.getElementById('nextBtn');
+        const quizCard = document.getElementById('quizCard');
+        const resultScreen = document.getElementById('resultScreen');
+        const finalScoreText = document.getElementById('finalScoreText');
+
+        function loadQuestion() {
+            answered = false;
+            feedbackBoxEl.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+
+            const q = quizData[currentQuestion];
+            questionCounterEl.textContent = `Pertanyaan ${currentQuestion + 1} dari ${quizData.length}`;
+            scoreCounterEl.textContent = `Skor: ${score}`;
+            progressBarEl.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
+
+            questionTextEl.textContent = q.question;
+            optionsContainerEl.innerHTML = '';
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-500 hover:bg-brand-50/50 dark:hover:bg-slate-700/50 font-medium text-slate-700 dark:text-slate-200 transition flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt}</span>
+                    <i class="fa-regular fa-circle text-slate-300 dark:text-slate-600 group-hover:text-brand-500"></i>
+                `;
+                btn.onclick = () => selectOption(index, btn);
+                optionsContainerEl.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIndex, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuestion];
+            const allButtons = optionsContainerEl.children;
+
+            if (selectedIndex === q.correct) {
+                score += 25;
+                btnElement.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-200 font-medium flex items-center justify-between";
+                btnElement.querySelector('i').className = "fa-solid fa-circle-check text-emerald-500 text-lg";
+                
+                feedbackBoxEl.className = "p-4 rounded-xl text-sm font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800";
+                feedbackBoxEl.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> <strong>Benar!</strong> ${q.explanation}`;
+            } else {
+                btnElement.className = "w-full text-left p-4 rounded-xl border-2 border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-200 font-medium flex items-center justify-between";
+                btnElement.querySelector('i').className = "fa-solid fa-circle-xmark text-rose-500 text-lg";
+
+                // Highlight correct answer
+                allButtons[q.correct].className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50/60 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-200 font-medium flex items-center justify-between";
+
+                feedbackBoxEl.className = "p-4 rounded-xl text-sm font-medium bg-rose-100 text-rose-800 dark:bg-rose-900/50 dark:text-rose-200 border border-rose-200 dark:border-rose-800";
+                feedbackBoxEl.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1"></i> <strong>Kurang tepat.</strong> ${q.explanation}`;
+            }
+
+            feedbackBoxEl.classList.remove('hidden');
+            scoreCounterEl.textContent = `Skor: ${score}`;
+            nextBtn.classList.remove('hidden');
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            quizCard.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+            finalScoreText.textContent = `Kamu berhasil mendapatkan skor ${score} dari 100!`;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            resultScreen.classList.add('hidden');
+            quizCard.classList.remove('hidden');
+            loadQuestion();
+        }
+
+        // Initialize Quiz on Load
+        window.onload = function() {
+            loadQuestion();
+        }
+    </script>
+</body>
+</html>
